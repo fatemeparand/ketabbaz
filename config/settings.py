@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # third_party apps
+
+    # my apps
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -76,9 +81,9 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'krtab-bazan',
+        'NAME': 'postgres',
         'USER': 'ketab-baz-user',
-        'password': 'ketab-user',
+        'PASSWORD': 'ketab-user',
         'HOST': 'localhost',
         'PORT': 5432,
     }
@@ -125,3 +130,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
