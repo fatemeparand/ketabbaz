@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     # my apps
     'accounts',
+    'pages',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [str(BASE_DIR.joinpath('template'))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -132,3 +133,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
+
+# registration config
+LOGIN_REDIRECT_URL = 'pages:home'

@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+{% load i18n %}
+
+{% block page_title %}
+    {% trans 'login' %}
+{% endblock %}
+
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="{% trans 'login' %}">
+    </form>
+{% endblock %}
