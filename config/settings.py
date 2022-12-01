@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # third_party apps
+    'rosetta',
 
     # my apps
     'accounts',
@@ -113,11 +114,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fa'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tehran'
 
 USE_I18N = True
+
+USE_L10N = True
 
 USE_TZ = True
 
@@ -136,3 +139,14 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 
 # registration config
 LOGIN_REDIRECT_URL = 'pages:home'
+
+# i18n config
+LOCALE_PATHS = (
+    str(BASE_DIR.joinpath('locale')),
+)
+
+LANGUAGES = (
+    ('en', 'English'),
+    ('fa', 'Persian'),
+)
+
