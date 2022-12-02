@@ -4,4 +4,5 @@ from .models import BookBlog
 
 @admin.register(BookBlog)
 class BookBlogAdmin(admin.ModelAdmin):
-    list_display = ('book_name', 'book_author', 'author', 'status')
+    list_display = ('book_name', 'book_author', 'author', 'status', 'datetime_modified')
+    ordering = ('-datetime_modified',)

@@ -6,8 +6,12 @@
     <meta charset="UTF-8">
     <title>{% block page_title %}{% endblock %}</title>
 </head>
-<body>
-<a href="{% url 'pages:home' %}">{% trans 'home' %}</a>
+<body dir="rtl">
+<p>
+    <a href="{% url 'pages:home' %}">{% trans 'home' %}</a>
+    <a href="{% url 'book_blog:bookblog_list' %}">{% trans 'book introduction' %}</a>
+</p>
+
 
 {% if user.is_authenticated %}
     <p>
@@ -20,8 +24,8 @@
         <a href="{% url 'accounts:signup' %}">{% trans 'signup' %}</a>
         <a href="{% url 'login' %}">{% trans 'login' %}</a>
     </p>
-
 {% endif %}
+<p></p>
 
 
 

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-02 16:25+0330\n"
-"PO-Revision-Date: 2022-12-02 16:26+0330\n"
+"POT-Creation-Date: 2022-12-02 19:27+0330\n"
+"PO-Revision-Date: 2022-12-02 19:28+0330\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "book name"
 msgstr "نام کتاب"
 
-#: .\book_blog\models.py:13
+#: .\book_blog\models.py:13 .\template\book_blog\bookblog_list.html:13
 msgid "book author"
 msgstr "نویسنده کتاب"
 
@@ -50,27 +50,43 @@ msgstr "وضعیت"
 msgid "number of book page"
 msgstr "صفحات کتاب"
 
-#: .\template\_base.html:10 .\template\pages\home.html:5
+#: .\template\_base.html:11 .\template\pages\home.html:5
 msgid "home"
 msgstr "خانه"
 
-#: .\template\_base.html:14
+#: .\template\_base.html:12
+#, fuzzy
+#| msgid "introduction"
+msgid "book introduction"
+msgstr "معرفی"
+
+#: .\template\_base.html:18
 msgid "hello"
 msgstr "سلام"
 
-#: .\template\_base.html:15
+#: .\template\_base.html:19
 msgid "logout"
 msgstr "خروج"
 
-#: .\template\_base.html:20 .\template\registration\signup.html:5
+#: .\template\_base.html:24 .\template\registration\signup.html:5
 #: .\template\registration\signup.html:12
 msgid "signup"
 msgstr "ثبت نام"
 
-#: .\template\_base.html:21 .\template\registration\login.html:5
+#: .\template\_base.html:25 .\template\registration\login.html:5
 #: .\template\registration\login.html:12
 msgid "login"
 msgstr "ورود"
+
+#: .\template\book_blog\bookblog_list.html:5
+#, fuzzy
+#| msgid "book author"
+msgid "book blog"
+msgstr "نویسنده کتاب"
+
+#: .\template\book_blog\bookblog_list.html:15
+msgid "add by "
+msgstr "اضافه شده توسط "
 
 #: .\template\pages\home.html:9
 msgid "Home Page"
