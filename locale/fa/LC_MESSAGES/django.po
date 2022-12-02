@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-02 19:27+0330\n"
+"POT-Creation-Date: 2022-12-02 20:22+0330\n"
 "PO-Revision-Date: 2022-12-02 19:28+0330\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,8 @@ msgstr ""
 msgid "book name"
 msgstr "نام کتاب"
 
-#: .\book_blog\models.py:13 .\template\book_blog\bookblog_list.html:13
+#: .\book_blog\models.py:13 .\template\book_blog\bookblog_detail.html:13
+#: .\template\book_blog\bookblog_list.html:13
 msgid "book author"
 msgstr "نویسنده کتاب"
 
@@ -55,10 +56,9 @@ msgid "home"
 msgstr "خانه"
 
 #: .\template\_base.html:12
-#, fuzzy
 #| msgid "introduction"
 msgid "book introduction"
-msgstr "معرفی"
+msgstr "معرفی کتاب"
 
 #: .\template\_base.html:18
 msgid "hello"
@@ -78,15 +78,20 @@ msgstr "ثبت نام"
 msgid "login"
 msgstr "ورود"
 
+#: .\template\book_blog\bookblog_detail.html:15
+#: .\template\book_blog\bookblog_list.html:15
+msgid "add by "
+msgstr "اضافه شده توسط "
+
 #: .\template\book_blog\bookblog_list.html:5
 #, fuzzy
 #| msgid "book author"
 msgid "book blog"
 msgstr "نویسنده کتاب"
 
-#: .\template\book_blog\bookblog_list.html:15
-msgid "add by "
-msgstr "اضافه شده توسط "
+#: .\template\book_blog\bookblog_list.html:16
+msgid "more..."
+msgstr ""
 
 #: .\template\pages\home.html:9
 msgid "Home Page"
