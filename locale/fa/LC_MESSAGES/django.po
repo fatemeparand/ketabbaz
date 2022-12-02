@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-01 15:05+0330\n"
-"PO-Revision-Date: 2022-12-01 15:06+0000\n"
+"POT-Creation-Date: 2022-12-01 15:41+0330\n"
+"PO-Revision-Date: 2022-12-01 15:42+0330\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,14 +18,28 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\template\pages\home.html:5
+#: .\template\_base.html:10 .\template\pages\home.html:5
 msgid "home"
 msgstr "خانه"
+
+#: .\template\_base.html:14
+msgid "hello"
+msgstr "سلام"
+
+#: .\template\_base.html:15
+msgid "logout"
+msgstr "خروج"
+
+#: .\template\_base.html:20 .\template\registration\signup.html:5
+#: .\template\registration\signup.html:12
+msgid "signup"
+msgstr "ثبت نام"
+
+#: .\template\_base.html:21 .\template\registration\login.html:5
+#: .\template\registration\login.html:12
+msgid "login"
+msgstr "ورود"
 
 #: .\template\pages\home.html:9
 msgid "Home Page"
 msgstr "صفحه خانه"
-
-#: .\template\registration\login.html:5 .\template\registration\login.html:12
-msgid "login"
-msgstr "ورود"

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     # my apps
     'accounts',
     'pages',
+    'book_blog',
 ]
 
 MIDDLEWARE = [
@@ -139,6 +140,7 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 
 # registration config
 LOGIN_REDIRECT_URL = 'pages:home'
+LOGOUT_REDIRECT_URL = 'pages:home'
 
 # i18n config
 LOCALE_PATHS = (

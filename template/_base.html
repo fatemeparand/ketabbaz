@@ -7,10 +7,26 @@
     <title>{% block page_title %}{% endblock %}</title>
 </head>
 <body>
-    <a href="{% url 'pages:home' %}">{% trans 'home' %}</a>
-    <a href="{% url 'login' %}">{% trans 'login' %}</a>
-    {% block content %}
+<a href="{% url 'pages:home' %}">{% trans 'home' %}</a>
 
-    {% endblock %}
+{% if user.is_authenticated %}
+    <p>
+        {% trans 'hello' %}{{ user.username }},
+        <a href="{% url 'logout' %}">{% trans 'logout' %}</a>
+    </p>
+
+{% else %}
+    <p>
+        <a href="{% url 'accounts:signup' %}">{% trans 'signup' %}</a>
+        <a href="{% url 'login' %}">{% trans 'login' %}</a>
+    </p>
+
+{% endif %}
+
+
+
+{% block content %}
+
+{% endblock %}
 </body>
 </html>
