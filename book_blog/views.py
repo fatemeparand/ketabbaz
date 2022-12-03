@@ -1,6 +1,8 @@
-from django.shortcuts import render
-from .models import BookBlog
+from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
+
+from .models import BookBlog
+from .forms import BookForm
 
 
 def book_list_view(request):
@@ -14,3 +16,16 @@ def book_detail_view(request, book_id):
 
     context = {'book': book}
     return render(request, 'book_blog/bookblog_detail.html', context)
+
+
+def book_create_view(request):
+    if request.method == 'POST':
+        form = BookForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('book_blog:bookblog_list')
+    else:
+        form = BookForm()
+
+    context = {'form': form}
+    return render(request, 'book_blog/bookblog_create.html', context)
