@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-03 13:54+0330\n"
-"PO-Revision-Date: 2022-12-03 13:55+0330\n"
+"POT-Creation-Date: 2022-12-04 13:51+0330\n"
+"PO-Revision-Date: 2022-12-04 13:51+0330\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,36 +18,36 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\book_blog\models.py:12
+#: .\book_blog\models.py:13
 msgid "book name"
 msgstr "نام کتاب"
 
-#: .\book_blog\models.py:13 .\template\book_blog\bookblog_detail.html:13
+#: .\book_blog\models.py:14 .\template\book_blog\bookblog_detail.html:16
 #: .\template\book_blog\bookblog_list.html:14
 msgid "book author"
 msgstr "نویسنده کتاب"
 
-#: .\book_blog\models.py:15
+#: .\book_blog\models.py:16
 msgid "introduction"
 msgstr "معرفی"
 
-#: .\book_blog\models.py:16
+#: .\book_blog\models.py:17
 msgid "time created"
 msgstr "تاریخ ایجاد"
 
-#: .\book_blog\models.py:17
+#: .\book_blog\models.py:18
 msgid "time modified"
 msgstr "تاریخ ویرایش"
 
-#: .\book_blog\models.py:18
+#: .\book_blog\models.py:19
 msgid "author"
 msgstr "نویسنده"
 
-#: .\book_blog\models.py:19
+#: .\book_blog\models.py:20
 msgid "status"
 msgstr "وضعیت"
 
-#: .\book_blog\models.py:20
+#: .\book_blog\models.py:21
 msgid "number of book page"
 msgstr "صفحات کتاب"
 
@@ -55,7 +55,7 @@ msgstr "صفحات کتاب"
 msgid "home"
 msgstr "خانه"
 
-#: .\template\_base.html:12
+#: .\template\_base.html:12 .\template\book_blog\bookblog_list.html:5
 msgid "book introduction"
 msgstr "معرفی کتاب"
 
@@ -86,20 +86,34 @@ msgid "Enter your book information: "
 msgstr "اطلاعات کتاب خود را وارد کنید:"
 
 #: .\template\book_blog\bookblog_create.html:13
-#| msgid "time created"
 msgid "create"
 msgstr "ایجاد"
 
-#: .\template\book_blog\bookblog_detail.html:15
+#: .\template\book_blog\bookblog_delete.html:5
+#: .\template\book_blog\bookblog_detail.html:13
+msgid "delete"
+msgstr "حذف"
+
+#: .\template\book_blog\bookblog_delete.html:9
+msgid "Are you sure you want to delete the "
+msgstr "آیا میخواهید حذف شود "
+
+#: .\template\book_blog\bookblog_delete.html:14
+msgid "Yes"
+msgstr "بله"
+
+#: .\template\book_blog\bookblog_delete.html:15
+msgid "No"
+msgstr "خیر"
+
+#: .\template\book_blog\bookblog_detail.html:12
+msgid "Edit"
+msgstr "ویرایش"
+
+#: .\template\book_blog\bookblog_detail.html:18
 #: .\template\book_blog\bookblog_list.html:16
 msgid "add by "
 msgstr "اضافه شده توسط "
-
-#: .\template\book_blog\bookblog_list.html:5
-#, fuzzy
-#| msgid "book author"
-msgid "book blog"
-msgstr "نویسنده کتاب"
 
 #: .\template\book_blog\bookblog_list.html:9
 msgid "add new book"
@@ -112,3 +126,10 @@ msgstr "بیشتر"
 #: .\template\pages\home.html:9
 msgid "Home Page"
 msgstr "صفحه خانه"
+
+#~ msgid "update"
+#~ msgstr "ویرایش"
+
+#, fuzzy
+#~ msgid "book blog"
+#~ msgstr "نویسنده کتاب"

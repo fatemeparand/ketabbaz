@@ -14,7 +14,7 @@
         <p>{% trans 'book author' %}: {{ book.book_author }}</p>
         <p>{{ book.introduction|linebreaksbr|truncatewords:20 }}</p>
         <p class="small">{% trans 'add by ' %}: {{ book.author }}</p>
-        <a href="{% url 'book_blog:bookblog_detail' book.id %}">{% trans 'more...' %}</a>
+        <a href="{{ book.get_absolute_url }}">{% trans 'more...' %}</a>
         <p>_____________________________________________________________________________________________________</p>
     {% endfor %}
 

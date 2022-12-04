@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+{% load i18n %}
+
+{% block page_title %}
+    {% trans 'delete' %} {{ book.book_name }}
+{% endblock %}
+
+{% block content %}
+    <p>{% trans 'Are you sure you want to delete the ' %}{{ book.book_name }}?</p>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="{% trans 'Yes' %}">
+        <a href="{{ book.get_absolute_url }}">{% trans 'No' %}</a>
+    </form>
+{% endblock %}

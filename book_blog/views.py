@@ -38,6 +38,16 @@ def book_update_view(request, book_id):
         form.save()
         return redirect('book_blog:bookblog_list')
 
-    context = {'form': form }
+    context = {'form': form}
     return render(request, 'book_blog/bookblog_create.html', context)
+
+
+def book_delete_view(request, book_id):
+    book = get_object_or_404(BookBlog, id=book_id)
+    if request.method == 'POST':
+        book.delete()
+        return redirect('book_blog:bookblog_list')
+
+    context = {'book': book}
+    return render(request, 'book_blog/bookblog_delete.html', context)
 

@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
+from django.urls import reverse
 
 
 class BookBlog(models.Model):
@@ -21,3 +22,6 @@ class BookBlog(models.Model):
 
     def __str__(self):
         return self.book_name
+
+    def get_absolute_url(self):
+        return reverse('book_blog:bookblog_detail', args=[self.id])
