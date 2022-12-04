@@ -61,3 +61,50 @@ class BookBlogTest(TestCase):
         response = self.client.get(reverse('book_blog:bookblog_list'))
         self.assertContains(response, self.bookblog1.book_name)
         self.assertNotContains(response, self.bookblog2.book_name)
+
+    def test_book_model_str(self):
+        self.assertEqual(str(self.bookblog1), self.bookblog1.book_name)
+
+    def test_book_detail(self):
+        self.assertEqual(self.bookblog1.book_name, 'book1')
+        self.assertEqual(self.bookblog1.book_author, 'author1')
+        self.assertEqual(self.bookblog1.introduction, 'introduction1')
+        self.assertEqual(self.bookblog1.author, self.user)
+
+    # create book
+    def test_book_create_view(self):
+        response = self.client.post(reverse('book_blog:bookblog_create'), {
+            'book_name': 'book1',
+            'book_author': 'author1',
+            'introduction': 'introduction1',
+            'author': self.user.id,
+            'status': BookBlog.STATUS_CHOICES[0][0],  # pub
+            'book_page': 100,
+        })
+
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(BookBlog.objects.last().book_name, 'book1')
+        self.assertEqual(BookBlog.objects.last().book_author, 'author1')
+        self.assertEqual(BookBlog.objects.last().introduction, 'introduction1')
+
+    # update book
+    def test_book_update_view(self):
+        response = self.client.post(reverse('book_blog:bookblog_update', args=[self.bookblog2.id]), {
+            'book_name': 'book2 updated',
+            'book_author': 'author2',
+            'introduction': 'introduction2 updated',
+            'author': self.bookblog2.author.id,
+            'status': 'drf',
+            'book_page': 100,
+        })
+
+        self.assertEqual(response.status_code, 302)
+
+        self.assertEqual(BookBlog.objects.last().book_name, 'book2 updated')
+        self.assertEqual(BookBlog.objects.last().introduction, 'introduction2 updated')
+
+    # delete book
+    def test_book_delete_view(self):
+        response = self.client.post(reverse('book_blog:bookblog_delete', args=[self.bookblog1.id]))
+
+        self.assertEqual(response.status_code, 302)
