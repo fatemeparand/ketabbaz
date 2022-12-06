@@ -12,7 +12,7 @@ class Book(models.Model):
 
     book_name = models.CharField(max_length=100, verbose_name=_('book name'))
     book_author = models.CharField(max_length=100, verbose_name=_('book author'))
-    description = models.TextField(verbose_name=_('description'))
+    description = models.TextField(verbose_name=_('book description'))
     book_page = models.PositiveIntegerField(verbose_name=_('number of book page'), blank=True)
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, verbose_name=_('author'))
     status = models.CharField(choices=STATUS_CHOICES, max_length=3, verbose_name=_('status'))
@@ -24,4 +24,4 @@ class Book(models.Model):
         return self.book_name
 
     def get_absolute_url(self):
-        return reverse('book:book_detail', args=[self.id])
+        return reverse('book_store:book_detail', args=[self.id])

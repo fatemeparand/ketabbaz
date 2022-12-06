@@ -37,7 +37,7 @@ class BookUpdateView(generic.UpdateView):
 class BookDeleteView(generic.DeleteView):
     model = Book
     context_object_name = 'book'
-    success_url = reverse_lazy('book:book_list')
+    success_url = reverse_lazy('book_store:book_list')
     template_name = 'book/book_delete.html'
 
 

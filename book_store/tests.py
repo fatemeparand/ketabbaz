@@ -4,7 +4,7 @@ from .models import Book
 from accounts.models import CustomUser
 
 
-class BookBlogTest(TestCase):
+class BookStoreTest(TestCase):
 
     @classmethod
     def setUpTestData(cls):
@@ -33,11 +33,11 @@ class BookBlogTest(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_book_list_url_by_name(self):
-        response = self.client.get(reverse('book:book_list'))
+        response = self.client.get(reverse('book_store:book_list'))
         self.assertEqual(response.status_code, 200)
 
     def test_book_name_on_book_list_page(self):
-        response = self.client.get(reverse('book:book_list'))
+        response = self.client.get(reverse('book_store:book_list'))
         self.assertContains(response, self.book1.book_name)
 
     def test_book_detail_url(self):
@@ -45,20 +45,20 @@ class BookBlogTest(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_book_detail_url_by_name(self):
-        response = self.client.get(reverse('book:book_detail', args=[self.book1.id]))
+        response = self.client.get(reverse('book_store:book_detail', args=[self.book1.id]))
         self.assertEqual(response.status_code, 200)
 
     def test_book_detail_on_book_detail_page(self):
-        response = self.client.get(reverse('book:book_detail', args=[self.book1.id]))
+        response = self.client.get(reverse('book_store:book_detail', args=[self.book1.id]))
         self.assertContains(response, self.book1.book_name)
-        self.assertContains(response, self.book1.introduction)
+        self.assertContains(response, self.book1.description)
 
     def test_status_404_if_book_id_not_exist(self):
-        response = self.client.get(reverse('book:book_detail', args=[9999]))
+        response = self.client.get(reverse('book_store:book_detail', args=[9999]))
         self.assertEqual(response.status_code, 404)
 
     def test_drf_books_not_show_in_book_list(self):
-        response = self.client.get(reverse('book:book_list'))
+        response = self.client.get(reverse('book_store:book_list'))
         self.assertContains(response, self.book1.book_name)
         self.assertNotContains(response, self.book2.book_name)
 
@@ -73,7 +73,7 @@ class BookBlogTest(TestCase):
 
     # create book
     def test_book_create_view(self):
-        response = self.client.post(reverse('book:book_create'), {
+        response = self.client.post(reverse('book_store:book_create'), {
             'book_name': 'book1',
             'book_author': 'author1',
             'description': 'description1',
@@ -89,7 +89,7 @@ class BookBlogTest(TestCase):
 
     # update book
     def test_book_update_view(self):
-        response = self.client.post(reverse('book:book_update', args=[self.book2.id]), {
+        response = self.client.post(reverse('book_store:book_update', args=[self.book2.id]), {
             'book_name': 'book2 updated',
             'book_author': 'author2',
             'description': 'description2 updated',
@@ -105,6 +105,6 @@ class BookBlogTest(TestCase):
 
     # delete book
     def test_book_delete_view(self):
-        response = self.client.post(reverse('book:book_delete', args=[self.book1.id]))
+        response = self.client.post(reverse('book_store:book_delete', args=[self.book1.id]))
 
         self.assertEqual(response.status_code, 302)
