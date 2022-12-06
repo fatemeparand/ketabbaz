@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
+        'NAME': 'ketab-Bazan',
         'USER': 'ketab-baz-user',
         'PASSWORD': 'ketab-user',
         'HOST': 'localhost',
