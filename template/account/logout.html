@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+{% load i18n %}
+
+{% block page_title %}
+    {% trans 'logout' %}
+{% endblock %}
+
+{% block content %}
+    <p>{% trans 'Are you sure you want to leave?' %}</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="{% trans 'logout' %}"><a href="{% url 'pages:home' %}">{% trans 'No' %}</a>
+    </form>
+
+{% endblock %}

@@ -26,13 +26,13 @@
 {% if user.is_authenticated %}
     <p>
         {% trans 'hello' %}{{ user.username }},
-        <a href="{% url 'logout' %}">{% trans 'logout' %}</a>
+        <a href="{% url 'account_logout' %}">{% trans 'logout' %}</a>
     </p>
 
 {% else %}
     <p>
-        <a href="{% url 'accounts:signup' %}">{% trans 'signup' %}</a>
-        <a href="{% url 'login' %}">{% trans 'login' %}</a>
+        <a href="{% url 'account_signup' %}">{% trans 'signup' %}</a>
+        <a href="{% url 'account_login' %}">{% trans 'login' %}</a>
     </p>
 {% endif %}
 <p></p>
