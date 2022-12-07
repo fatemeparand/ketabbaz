@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-07 03:12+0330\n"
+"POT-Creation-Date: 2022-12-07 16:01+0330\n"
 "PO-Revision-Date: 2022-12-07 03:14+0330\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,18 +68,27 @@ msgstr "سلام"
 msgid "logout"
 msgstr "خروج"
 
-#: .\template\_base.html:34 .\template\account\signup.html:6
+#: .\template\_base.html:30
+#: .\template\registration\password_reset_confirm.html:13
+msgid "change password"
+msgstr ""
+
+#: .\template\_base.html:35 .\template\account\signup.html:6
 #: .\template\account\signup.html:13
 msgid "signup"
 msgstr "ثبت نام"
 
-#: .\template\_base.html:35 .\template\account\login.html:6
+#: .\template\_base.html:36 .\template\account\login.html:6
 #: .\template\account\login.html:13
+#: .\template\registration\password_reset_compelete.html:10
 msgid "login"
 msgstr "ورود"
 
+#: .\template\account\login.html:14
+msgid "forgot password?"
+msgstr ""
+
 #: .\template\account\logout.html:9
-#| msgid "Are you sure you want to delete the "
 msgid "Are you sure you want to leave?"
 msgstr "آیا برای خارج شدن مطمئن هستید؟"
 
@@ -134,3 +143,48 @@ msgstr "بیشتر"
 #: .\template\pages\home.html:9
 msgid "Home Page"
 msgstr "صفحه خانه"
+
+#: .\template\registration\password_change_done.html:5
+msgid "successful change"
+msgstr ""
+
+#: .\template\registration\password_change_done.html:9
+msgid "Password changed successfully!!!!!!!!"
+msgstr ""
+
+#: .\template\registration\password_change_form.html:6
+msgid "password change"
+msgstr ""
+
+#: .\template\registration\password_change_form.html:13
+msgid "change"
+msgstr ""
+
+#: .\template\registration\password_reset_compelete.html:5
+#: .\template\registration\password_reset_done.html:5
+msgid "successful reset"
+msgstr ""
+
+#: .\template\registration\password_reset_compelete.html:9
+msgid "Password has been reset!"
+msgstr ""
+
+#: .\template\registration\password_reset_compelete.html:10
+msgid "you can login on with your new password "
+msgstr ""
+
+#: .\template\registration\password_reset_confirm.html:6
+msgid "new password"
+msgstr ""
+
+#: .\template\registration\password_reset_done.html:9
+msgid "please check your email, we have send you the instructions."
+msgstr ""
+
+#: .\template\registration\password_reset_form.html:6
+msgid "password reset"
+msgstr ""
+
+#: .\template\registration\password_reset_form.html:13
+msgid "Send Email"
+msgstr ""
