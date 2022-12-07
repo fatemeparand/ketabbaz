@@ -27,6 +27,7 @@
     <p>
         {% trans 'hello' %}{{ user.username }},
         <a href="{% url 'account_logout' %}">{% trans 'logout' %}</a>
+        <a href="{% url 'password_change' %}">{% trans 'change password' %}</a>
     </p>
 
 {% else %}

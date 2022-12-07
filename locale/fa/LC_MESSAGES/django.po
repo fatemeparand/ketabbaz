@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-06 15:23+0330\n"
-"PO-Revision-Date: 2022-12-06 15:24+0330\n"
+"POT-Creation-Date: 2022-12-07 03:12+0330\n"
+"PO-Revision-Date: 2022-12-07 03:14+0330\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,6 @@ msgid "book author"
 msgstr "نویسنده کتاب"
 
 #: .\book_store\models.py:15
-#| msgid "book introduction"
 msgid "book description"
 msgstr "معرفی کتاب"
 
@@ -52,59 +51,65 @@ msgstr "تاریخ ایجاد"
 msgid "time modified"
 msgstr "تاریخ ویرایش"
 
-#: .\template\_base.html:11 .\template\pages\home.html:5
+#: .\template\_base.html:21 .\template\pages\home.html:5
 msgid "home"
 msgstr "خانه"
 
-#: .\template\_base.html:12
+#: .\template\_base.html:22
 msgid "book list"
 msgstr "لیست کتاب ها"
 
-#: .\template\_base.html:18
+#: .\template\_base.html:28
 msgid "hello"
 msgstr "سلام"
 
-#: .\template\_base.html:19
+#: .\template\_base.html:29 .\template\account\logout.html:5
+#: .\template\account\logout.html:13
 msgid "logout"
 msgstr "خروج"
 
-#: .\template\_base.html:24 .\template\registration\signup.html:5
-#: .\template\registration\signup.html:12
+#: .\template\_base.html:34 .\template\account\signup.html:6
+#: .\template\account\signup.html:13
 msgid "signup"
 msgstr "ثبت نام"
 
-#: .\template\_base.html:25 .\template\registration\login.html:5
-#: .\template\registration\login.html:12
+#: .\template\_base.html:35 .\template\account\login.html:6
+#: .\template\account\login.html:13
 msgid "login"
 msgstr "ورود"
 
-#: .\template\book\book_create.html:5
+#: .\template\account\logout.html:9
+#| msgid "Are you sure you want to delete the "
+msgid "Are you sure you want to leave?"
+msgstr "آیا برای خارج شدن مطمئن هستید؟"
+
+#: .\template\account\logout.html:13 .\template\book\book_delete.html:16
+msgid "No"
+msgstr "خیر"
+
+#: .\template\book\book_create.html:6
 msgid "new book"
 msgstr "کتاب جدید"
 
-#: .\template\book\book_create.html:9
+#: .\template\book\book_create.html:10
 msgid "Enter your book information: "
 msgstr "اطلاعات کتاب خود را وارد کنید:"
 
-#: .\template\book\book_create.html:13
+#: .\template\book\book_create.html:14
 msgid "create"
 msgstr "ایجاد"
 
-#: .\template\book\book_delete.html:5 .\template\book\book_detail.html:13
+#: .\template\book\book_delete.html:6 .\template\book\book_detail.html:13
 msgid "delete"
 msgstr "حذف"
 
-#: .\template\book\book_delete.html:9
+#: .\template\book\book_delete.html:10
 msgid "Are you sure you want to delete the "
 msgstr "آیا میخواهید حذف شود "
 
-#: .\template\book\book_delete.html:14
+#: .\template\book\book_delete.html:15
 msgid "Yes"
 msgstr "بله"
-
-#: .\template\book\book_delete.html:15
-msgid "No"
-msgstr "خیر"
 
 #: .\template\book\book_detail.html:12
 msgid "Edit"
@@ -129,4 +134,3 @@ msgstr "بیشتر"
 #: .\template\pages\home.html:9
 msgid "Home Page"
 msgstr "صفحه خانه"
-
