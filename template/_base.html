@@ -1,61 +1,267 @@
+{% load static %}
 {% load i18n %}
 
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="no-js"><!--------Theme Shered by Codingyar.com--------->
+
 <head>
-    <meta charset="UTF-8">
-
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>KetaBazan</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="{% static 'img/logo.png' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{% static 'img/icon.png' %}">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- ************************* CSS Files ************************* -->
+
+    <link rel="stylesheet" href="{% static 'css/_base.css' %}">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="{% static 'css/vendor.css' %}">
+
+    <!-- style css -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
 
     <title>{% block page_title %}{% endblock %}</title>
+    {#    <!-- Required meta tags -->#}
+    {#    <meta charset="utf-8">#}
+    {#    <meta name="viewport" content="width=device-width, initial-scale=1">#}
+    {##}
+    {#    <!-- Bootstrap CSS -->#}
+    {#    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"#}
+    {#          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">#}
+
+
 </head>
 <body dir="rtl">
-<p>
-    <a href="{% url 'pages:home' %}">{% trans 'home' %}</a>
-    <a href="{% url 'book_store:book_list' %}">{% trans 'book list' %}</a>
-</p>
+<!-- Main Wrapper Start -->
+<div class="wrapper">
+    <!-- Header Start -->
+    <header class="header">
+        <div class="header-inner fixed-header">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-9 col-lg-8 col-5 col-xs-0 col-none col-sm-block p-0">
+                        <nav class="main-navigation">
+                            <div class="site-branding" >
+                                <a href="{% url 'pages:home' %}" class="logo">
+                                    <figure class="logo--normal d-none d-sm-block">
+                                        <img class="px-5" src="{% static 'img/ketab_logo.png' %}"
+                                             style="max-height: 150px; margin-bottom: -15px;" alt="Logo">
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="mainmenu-nav d-none d-lg-block w-100 pr-3">
+                                <ul class="mainmenu d-lg-flex jusity-content-end jusity-content-lg-start pt-4">
+                                    <li class="mainmenu__item menu-item-has-children active">
+                                        <a href="{% url 'book_store:book_list' %}" class="mainmenu__link">
+                                            <span class="mm-text">{% trans 'book store' %}</span>
+                                        </a>
+                                    </li>
+                                    <li class="mainmenu__item menu-item-has-children">
+                                        <a href="Blog.html" class="mainmenu__link">
+                                            <span class="mm-text">وبلاگ</span>
+                                        </a>
+                                    </li>
+                                    <li class="mainmenu__item menu-item-has-children">
+                                        <a href="#" class="mainmenu__link">
+                                            <span class="mm-text">صفحات</span>
+                                        </a>
+                                    </li>
+                                    <li class="mainmenu__item">
+                                        <a href="contact-us.html" class="mainmenu__link">
+                                            <span class="mm-text">{% trans 'contact us' %}</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-7 col-12 p-0">
+                        <ul class="header-toolbar">
+                            <li class="header-toolbar__item">
+                                <a href="wishlist.html" class="header-toolbar__btn mx-4">
+                                    <i class="flaticon flaticon-like"></i>
+                                </a>
+                            </li>
+                            <li class="header-toolbar__item mini-cart-item">
+                                <a href="#miniCart" class="header-toolbar__btn toolbar-btn mini-cart-btn">
+                                    <i class="flaticon flaticon-shopping-cart"></i>
+                                    <sup class="mini-cart-count">2</sup>
+                                </a>
+                            </li>
+                            <li class="header-toolbar__item user-info">
+                                <a href="my-account.html" class="header-toolbar__btn">
+                                    <i class="flaticon flaticon-user"></i>
+                                </a>
+                                <ul class="user-info-menu">
+                                    <li>
+                                        <a class="text-right" href="my-account.html">حساب کاربری</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-right" href="cart.html">سبد خرید</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-right" href="wishlist.html">علاقه مندی ها</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-right" href="order-tracking.html">تاریخچه سفارشات</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="header-toolbar__item">
+                                <a href="#searchForm" class="header-toolbar__btn toolbar-btn">
+                                    <i class="flaticon flaticon-search"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mobile-menu"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    {% if user.is_authenticated %}
+        <p>
+            {% trans 'hello' %}{{ user.username }},
+            <a href="{% url 'account_logout' %}">{% trans 'logout' %}</a>
+            <a href="{% url 'password_change' %}">{% trans 'change password' %}</a>
+        </p>
+
+    {% else %}
+        <p>
+            <a href="{% url 'account_signup' %}">{% trans 'signup' %}</a>
+            <a href="{% url 'account_login' %}">{% trans 'login' %}</a>
+        </p>
+    {% endif %}
+    <p></p>
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- Search form Popup Start -->
+    <div class="searchform__popup" id="searchForm">
+        <a href="#" class="btn-close"><i class="flaticon flaticon-cross"></i></a>
+        <div class="searchform__body">
+            <p>در باکس زیر عبارت خود را وارد کنید</p>
+            <form class="searchform">
+                <input type="text" name="popup-search" id="popup-search" class="searchform__input"
+                       placeholder="جستجو در بین محصولات...">
+                <button type="submit" class="searchform__submit"><i class="flaticon flaticon-magnifying-glass-icon"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+    <!-- Search form Popup End -->
+
+    <!-- Mini Cart Start -->
+    <aside class="mini-cart" id="miniCart">
+        <div class="mini-cart-wrapper">
+            <a href="" class="btn-close"><i class="flaticon flaticon-cross"></i></a>
+            <div class="mini-cart-inner">
+                <h3 class="mini-cart__heading mb--40 mb-lg--30 text-right">سبد خرید</h3>
+                <div class="mini-cart__content">
+                    <ul class="mini-cart__list text-right">
+                        <li class="mini-cart__product d-flex justify-content-between">
+                            <div class="mini-cart__product__image">
+                                <a href="#">
+                                    <img src="assets/img/products/prod-1-100x100.jpg" alt="products">
+                                </a>
+                            </div>
+                            <div class="mini-cart__product__content pt-2">
+                                    <span class="mini-cart__product__title d-flex flex-row justify-content-between">
+                                        <a href="#"> محصول سماره یک </a>
+                                        <a href="#" class="">
+                                            &#10060;
+                                        </a>
+                                    </span>
+                                <span class="mini-cart__product__quantity">
+                                        <span>۴۹,۰۰۰ تومان</span> &#215; <span>۱</span>
+                                    </span>
+                            </div>
+                        </li>
+                        <li class="mini-cart__product d-flex justify-content-between">
+                            <div class="mini-cart__product__image">
+                                <a href="#">
+                                    <img src="assets/img/products/prod-1-100x100.jpg" alt="products">
+                                </a>
+                            </div>
+                            <div class="mini-cart__product__content pt-2">
+                                    <span class="mini-cart__product__title d-flex flex-row justify-content-between">
+                                        <a href="#"> محصول سماره یک </a>
+                                        <a href="#" class="">
+                                            &#10060;
+                                        </a>
+                                    </span>
+                                <span class="mini-cart__product__quantity">
+                                        <span>۴۹,۰۰۰ تومان</span> &#215; <span>۱</span>
+                                    </span>
+                            </div>
+                        </li>
+                        <li class="mini-cart__product d-flex justify-content-between">
+                            <div class="mini-cart__product__image">
+                                <a href="#">
+                                    <img src="assets/img/products/prod-1-100x100.jpg" alt="products">
+                                </a>
+                            </div>
+                            <div class="mini-cart__product__content pt-2">
+                                    <span class="mini-cart__product__title d-flex flex-row justify-content-between">
+                                        <a href="#"> محصول سماره یک </a>
+                                        <a href="#" class="">
+                                            &#10060;
+                                        </a>
+                                    </span>
+                                <span class="mini-cart__product__quantity">
+                                        <span>۴۹,۰۰۰ تومان</span> &#215; <span>۱</span>
+                                    </span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="mini-cart__total">
+                        <span>جمع کل</span>
+                        <span class="ammount">۱۴۸,۰۰۰ تومان</span>
+                    </div>
+                    <div class="mini-cart__buttons">
+                        <a href="cart.html" class="btn btn-fullwidth btn-bg-sand mb--20">مشاهده سبد خرید</a>
+                        <a href="checkout.html" class="btn btn-fullwidth btn-bg-sand">پرداخت</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- Mini Cart End -->
+</div>
 
 
-{% if user.is_authenticated %}
-    <p>
-        {% trans 'hello' %}{{ user.username }},
-        <a href="{% url 'account_logout' %}">{% trans 'logout' %}</a>
-        <a href="{% url 'password_change' %}">{% trans 'change password' %}</a>
-    </p>
+    <!-- ************************* JS Files ************************* -->
 
-{% else %}
-    <p>
-        <a href="{% url 'account_signup' %}">{% trans 'signup' %}</a>
-        <a href="{% url 'account_login' %}">{% trans 'login' %}</a>
-    </p>
-{% endif %}
-<p></p>
+    <!-- jQuery JS -->
+    <script src="{% static 'js/vendor.js' %}"></script>
+
+    <!-- Main JS -->
+    <script src="{% static 'js/main.js' %}"></script>
 
 
+    <!-- Optional JavaScript; choose one of the two! -->
 
-{% block content %}
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
 
-{% endblock %}
-
-
-<!-- Optional JavaScript; choose one of the two! -->
-
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-
-<!-- Option 2: Separate Popper and Bootstrap JS -->
-<!--
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
--->
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
 </body>
 </html>

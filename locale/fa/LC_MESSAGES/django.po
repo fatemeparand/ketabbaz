@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-11 12:09+0330\n"
-"PO-Revision-Date: 2022-12-11 12:09+0330\n"
+"POT-Creation-Date: 2022-12-11 18:46+0330\n"
+"PO-Revision-Date: 2022-12-11 18:26+0330\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -71,34 +71,42 @@ msgstr "تاریخ ایجاد"
 msgid "time modified"
 msgstr "تاریخ ویرایش"
 
-#: .\template\_base.html:21 .\template\pages\home.html:5
+#: .\template\_base.html:61
+msgid "book store"
+msgstr "فروشگاه کتاب"
+
+#: .\template\_base.html:76
+msgid "contact us"
+msgstr "تماس با ما"
+
+#: .\template\_base.html:133 .\template\pages\home.html:5
 msgid "home"
 msgstr "خانه"
 
-#: .\template\_base.html:22
+#: .\template\_base.html:134
 msgid "book list"
 msgstr "لیست کتاب ها"
 
-#: .\template\_base.html:28
+#: .\template\_base.html:138
 msgid "hello"
 msgstr "سلام"
 
-#: .\template\_base.html:29 .\template\account\logout.html:5
+#: .\template\_base.html:139 .\template\account\logout.html:5
 #: .\template\account\logout.html:13
 msgid "logout"
 msgstr "خروج"
 
-#: .\template\_base.html:30
+#: .\template\_base.html:140
 #: .\template\registration\password_reset_confirm.html:13
 msgid "change password"
 msgstr "تغییر رمز عبور"
 
-#: .\template\_base.html:35 .\template\account\signup.html:6
+#: .\template\_base.html:145 .\template\account\signup.html:6
 #: .\template\account\signup.html:13
 msgid "signup"
 msgstr "ثبت نام"
 
-#: .\template\_base.html:36 .\template\account\login.html:6
+#: .\template\_base.html:146 .\template\account\login.html:6
 #: .\template\account\login.html:13
 #: .\template\registration\password_reset_complete.html:10
 msgid "login"
