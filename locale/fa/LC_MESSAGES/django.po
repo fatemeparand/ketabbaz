@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-07 16:01+0330\n"
-"PO-Revision-Date: 2022-12-07 03:14+0330\n"
+"POT-Creation-Date: 2022-12-11 12:09+0330\n"
+"PO-Revision-Date: 2022-12-11 12:09+0330\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,36 +18,56 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\book_store\models.py:13
+#: .\book_store\models.py:8 .\book_store\models.py:32
+msgid "subject"
+msgstr "موضوع"
+
+#: .\book_store\models.py:21
 msgid "book name"
 msgstr "نام کتاب"
 
-#: .\book_store\models.py:14 .\template\book\book_detail.html:16
+#: .\book_store\models.py:22 .\template\book\book_detail.html:16
 #: .\template\book\book_list.html:14
 msgid "book author"
 msgstr "نویسنده کتاب"
 
-#: .\book_store\models.py:15
+#: .\book_store\models.py:23
+msgid "translator"
+msgstr "مترجم"
+
+#: .\book_store\models.py:24
+msgid "publisher"
+msgstr "ناشر"
+
+#: .\book_store\models.py:26
 msgid "book description"
 msgstr "معرفی کتاب"
 
-#: .\book_store\models.py:16
+#: .\book_store\models.py:27
+msgid "price"
+msgstr "قیمت"
+
+#: .\book_store\models.py:28
 msgid "number of book page"
 msgstr "صفحات کتاب"
 
-#: .\book_store\models.py:17
+#: .\book_store\models.py:29
 msgid "author"
 msgstr "نویسنده"
 
-#: .\book_store\models.py:18
+#: .\book_store\models.py:30
 msgid "status"
 msgstr "وضعیت"
 
-#: .\book_store\models.py:20
+#: .\book_store\models.py:31
+msgid "active status"
+msgstr "وضعیت فعالیت"
+
+#: .\book_store\models.py:34
 msgid "time created"
 msgstr "تاریخ ایجاد"
 
-#: .\book_store\models.py:21
+#: .\book_store\models.py:35
 msgid "time modified"
 msgstr "تاریخ ویرایش"
 
@@ -71,7 +91,7 @@ msgstr "خروج"
 #: .\template\_base.html:30
 #: .\template\registration\password_reset_confirm.html:13
 msgid "change password"
-msgstr ""
+msgstr "تغییر رمز عبور"
 
 #: .\template\_base.html:35 .\template\account\signup.html:6
 #: .\template\account\signup.html:13
@@ -80,13 +100,13 @@ msgstr "ثبت نام"
 
 #: .\template\_base.html:36 .\template\account\login.html:6
 #: .\template\account\login.html:13
-#: .\template\registration\password_reset_compelete.html:10
+#: .\template\registration\password_reset_complete.html:10
 msgid "login"
 msgstr "ورود"
 
 #: .\template\account\login.html:14
 msgid "forgot password?"
-msgstr ""
+msgstr "فراموشی رمز"
 
 #: .\template\account\logout.html:9
 msgid "Are you sure you want to leave?"
@@ -146,45 +166,46 @@ msgstr "صفحه خانه"
 
 #: .\template\registration\password_change_done.html:5
 msgid "successful change"
-msgstr ""
+msgstr "تغییر موفقیت "
 
 #: .\template\registration\password_change_done.html:9
 msgid "Password changed successfully!!!!!!!!"
-msgstr ""
+msgstr "تغییر رمز عبور با موفقیت انجام شد!!"
 
 #: .\template\registration\password_change_form.html:6
 msgid "password change"
-msgstr ""
+msgstr "تفییر رمز"
 
 #: .\template\registration\password_change_form.html:13
 msgid "change"
-msgstr ""
+msgstr "تغییر"
 
-#: .\template\registration\password_reset_compelete.html:5
+#: .\template\registration\password_reset_complete.html:5
 #: .\template\registration\password_reset_done.html:5
 msgid "successful reset"
-msgstr ""
+msgstr "بازنشانی موفق"
 
-#: .\template\registration\password_reset_compelete.html:9
+#: .\template\registration\password_reset_complete.html:9
 msgid "Password has been reset!"
-msgstr ""
+msgstr "رمز عبور بازنشانی شد!"
 
-#: .\template\registration\password_reset_compelete.html:10
+#: .\template\registration\password_reset_complete.html:10
 msgid "you can login on with your new password "
-msgstr ""
+msgstr "می توانید با رمز عبور جدید خود وارد شوید.."
 
 #: .\template\registration\password_reset_confirm.html:6
 msgid "new password"
-msgstr ""
+msgstr "رمز عبور جدید"
 
 #: .\template\registration\password_reset_done.html:9
 msgid "please check your email, we have send you the instructions."
 msgstr ""
+"لطفا ایمیل خود را بررسی کنید، ما دستورالعمل را برای شما ارسال کرده ایم."
 
 #: .\template\registration\password_reset_form.html:6
 msgid "password reset"
-msgstr ""
+msgstr "بازنشانی رمز"
 
 #: .\template\registration\password_reset_form.html:13
 msgid "Send Email"
-msgstr ""
+msgstr "ارسال ایمیل"

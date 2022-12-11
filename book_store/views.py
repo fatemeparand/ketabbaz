@@ -11,7 +11,7 @@ class BookListView(generic.ListView):
     template_name = 'book/book_list.html'
 
     def get_queryset(self):
-        return Book.objects.filter(status='pub').order_by('-datetime_modified')
+        return Book.objects.filter(active=True).order_by('-datetime_modified')
 
 
 class BookDetailView(generic.DetailView):
