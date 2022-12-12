@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-11 18:46+0330\n"
-"PO-Revision-Date: 2022-12-11 18:26+0330\n"
+"POT-Creation-Date: 2022-12-12 11:17+0330\n"
+"PO-Revision-Date: 2022-12-12 11:17+0330\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\book_store\models.py:8 .\book_store\models.py:32
+#: .\book_store\models.py:8 .\book_store\models.py:33
 msgid "subject"
 msgstr "موضوع"
 
@@ -27,7 +27,7 @@ msgid "book name"
 msgstr "نام کتاب"
 
 #: .\book_store\models.py:22 .\template\book\book_detail.html:16
-#: .\template\book\book_list.html:14
+#: .\template\book\book_list.html:88
 msgid "book author"
 msgstr "نویسنده کتاب"
 
@@ -39,39 +39,43 @@ msgstr "مترجم"
 msgid "publisher"
 msgstr "ناشر"
 
-#: .\book_store\models.py:26
+#: .\book_store\models.py:25
+msgid "publication year"
+msgstr "سال انتشار"
+
+#: .\book_store\models.py:27
 msgid "book description"
 msgstr "معرفی کتاب"
 
-#: .\book_store\models.py:27
+#: .\book_store\models.py:28
 msgid "price"
 msgstr "قیمت"
 
-#: .\book_store\models.py:28
+#: .\book_store\models.py:29
 msgid "number of book page"
 msgstr "صفحات کتاب"
 
-#: .\book_store\models.py:29
+#: .\book_store\models.py:30
 msgid "author"
 msgstr "نویسنده"
 
-#: .\book_store\models.py:30
+#: .\book_store\models.py:31
 msgid "status"
 msgstr "وضعیت"
 
-#: .\book_store\models.py:31
+#: .\book_store\models.py:32
 msgid "active status"
 msgstr "وضعیت فعالیت"
 
-#: .\book_store\models.py:34
+#: .\book_store\models.py:35
 msgid "time created"
 msgstr "تاریخ ایجاد"
 
-#: .\book_store\models.py:35
+#: .\book_store\models.py:36
 msgid "time modified"
 msgstr "تاریخ ویرایش"
 
-#: .\template\_base.html:61
+#: .\template\_base.html:61 .\template\book\book_list.html:5
 msgid "book store"
 msgstr "فروشگاه کتاب"
 
@@ -79,34 +83,26 @@ msgstr "فروشگاه کتاب"
 msgid "contact us"
 msgstr "تماس با ما"
 
-#: .\template\_base.html:133 .\template\pages\home.html:5
-msgid "home"
-msgstr "خانه"
-
-#: .\template\_base.html:134
-msgid "book list"
-msgstr "لیست کتاب ها"
-
-#: .\template\_base.html:138
+#: .\template\_base.html:369
 msgid "hello"
 msgstr "سلام"
 
-#: .\template\_base.html:139 .\template\account\logout.html:5
+#: .\template\_base.html:370 .\template\account\logout.html:5
 #: .\template\account\logout.html:13
 msgid "logout"
 msgstr "خروج"
 
-#: .\template\_base.html:140
+#: .\template\_base.html:371
 #: .\template\registration\password_reset_confirm.html:13
 msgid "change password"
 msgstr "تغییر رمز عبور"
 
-#: .\template\_base.html:145 .\template\account\signup.html:6
+#: .\template\_base.html:376 .\template\account\signup.html:6
 #: .\template\account\signup.html:13
 msgid "signup"
 msgstr "ثبت نام"
 
-#: .\template\_base.html:146 .\template\account\login.html:6
+#: .\template\_base.html:377 .\template\account\login.html:6
 #: .\template\account\login.html:13
 #: .\template\registration\password_reset_complete.html:10
 msgid "login"
@@ -152,21 +148,25 @@ msgstr "بله"
 msgid "Edit"
 msgstr "ویرایش"
 
-#: .\template\book\book_detail.html:18 .\template\book\book_list.html:16
+#: .\template\book\book_detail.html:18 .\template\book\book_list.html:90
 msgid "add by "
 msgstr "اضافه شده توسط "
 
-#: .\template\book\book_list.html:5
-msgid "book introduction"
-msgstr "معرفی کتاب"
+#: .\template\book\book_list.html:53
+msgid "$"
+msgstr "تومان"
 
-#: .\template\book\book_list.html:9
+#: .\template\book\book_list.html:83
 msgid "add new book"
 msgstr "اضافه کردن کتاب جدید"
 
-#: .\template\book\book_list.html:17
+#: .\template\book\book_list.html:91
 msgid "more..."
 msgstr "بیشتر"
+
+#: .\template\pages\home.html:5
+msgid "home"
+msgstr "خانه"
 
 #: .\template\pages\home.html:9
 msgid "Home Page"
@@ -217,3 +217,9 @@ msgstr "بازنشانی رمز"
 #: .\template\registration\password_reset_form.html:13
 msgid "Send Email"
 msgstr "ارسال ایمیل"
+
+#~ msgid "book introduction"
+#~ msgstr "معرفی کتاب"
+
+#~ msgid "book list"
+#~ msgstr "لیست کتاب ها"

@@ -22,6 +22,7 @@ class Book(models.Model):
     book_author = models.CharField(max_length=100, verbose_name=_('book author'))
     translator = models.CharField(max_length=100, blank=True, null=True, verbose_name=_('translator'))
     publisher = models.CharField(max_length=50, verbose_name=_('publisher'))
+    publication_year = models.PositiveIntegerField(verbose_name=_('publication year'))
 
     description = models.TextField(verbose_name=_('book description'))
     price = models.PositiveIntegerField(default=0, verbose_name=_('price'))
