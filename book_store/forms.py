@@ -10,10 +10,12 @@ class BookForm(forms.ModelForm):
             'book_author',
             'translator',
             'publisher',
+            'publication_year',
             'description',
             'price',
             'book_page',
             'author',
             'status',
             'subject',
+            'image',
         ]
