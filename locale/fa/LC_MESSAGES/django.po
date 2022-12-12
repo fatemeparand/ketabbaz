@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-12 11:17+0330\n"
+"POT-Creation-Date: 2022-12-12 12:43+0330\n"
 "PO-Revision-Date: 2022-12-12 11:17+0330\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgid "book name"
 msgstr "نام کتاب"
 
 #: .\book_store\models.py:22 .\template\book\book_detail.html:16
-#: .\template\book\book_list.html:88
+#: .\template\book\book_list.html:94
 msgid "book author"
 msgstr "نویسنده کتاب"
 
@@ -67,11 +67,17 @@ msgstr "وضعیت"
 msgid "active status"
 msgstr "وضعیت فعالیت"
 
-#: .\book_store\models.py:35
+#: .\book_store\models.py:34
+#, fuzzy
+#| msgid "book name"
+msgid "book image"
+msgstr "نام کتاب"
+
+#: .\book_store\models.py:36
 msgid "time created"
 msgstr "تاریخ ایجاد"
 
-#: .\book_store\models.py:36
+#: .\book_store\models.py:37
 msgid "time modified"
 msgstr "تاریخ ویرایش"
 
@@ -148,19 +154,19 @@ msgstr "بله"
 msgid "Edit"
 msgstr "ویرایش"
 
-#: .\template\book\book_detail.html:18 .\template\book\book_list.html:90
+#: .\template\book\book_detail.html:18 .\template\book\book_list.html:96
 msgid "add by "
 msgstr "اضافه شده توسط "
 
-#: .\template\book\book_list.html:53
+#: .\template\book\book_list.html:61
 msgid "$"
 msgstr "تومان"
 
-#: .\template\book\book_list.html:83
+#: .\template\book\book_list.html:89
 msgid "add new book"
 msgstr "اضافه کردن کتاب جدید"
 
-#: .\template\book\book_list.html:91
+#: .\template\book\book_list.html:97
 msgid "more..."
 msgstr "بیشتر"
 
