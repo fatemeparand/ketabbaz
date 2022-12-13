@@ -8,6 +8,7 @@ from .forms import BookForm
 
 class BookListView(generic.ListView):
     context_object_name = 'books'
+    paginate_by = 12
     template_name = 'book/book_list.html'
 
     def get_queryset(self):
