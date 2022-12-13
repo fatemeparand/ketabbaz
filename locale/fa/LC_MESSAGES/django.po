@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-12 15:20+0330\n"
-"PO-Revision-Date: 2022-12-12 15:22+0330\n"
+"POT-Creation-Date: 2022-12-12 21:39+0330\n"
+"PO-Revision-Date: 2022-12-12 21:40+0330\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -88,34 +88,35 @@ msgstr "فروشگاه کتاب"
 msgid "contact us"
 msgstr "تماس با ما"
 
-#: .\template\_base.html:368
+#: .\template\_base.html:142 .\template\_base.html:484
 msgid "hello"
 msgstr "سلام"
 
-#: .\template\_base.html:369 .\template\account\logout.html:5
-#: .\template\account\logout.html:13
+#: .\template\_base.html:143 .\template\_base.html:485
+#: .\template\account\logout.html:5 .\template\account\logout.html:13
 msgid "logout"
 msgstr "خروج"
 
-#: .\template\_base.html:370
+#: .\template\_base.html:144 .\template\_base.html:486
 #: .\template\registration\password_reset_confirm.html:13
 msgid "change password"
 msgstr "تغییر رمز عبور"
 
-#: .\template\_base.html:375 .\template\account\signup.html:6
-#: .\template\account\signup.html:13
+#: .\template\_base.html:149 .\template\_base.html:491
+#: .\template\account\signup.html:6 .\template\account\signup.html:13
 msgid "signup"
 msgstr "ثبت نام"
 
-#: .\template\_base.html:376 .\template\account\login.html:6
-#: .\template\account\login.html:13
+#: .\template\_base.html:150 .\template\_base.html:492
+#: .\template\account\login.html:6 .\template\account\login.html:16
+#: .\template\account\login.html:38 .\template\account\login.html:55
 #: .\template\registration\password_reset_complete.html:10
 msgid "login"
 msgstr "ورود"
 
-#: .\template\account\login.html:14
+#: .\template\account\login.html:35 .\template\account\login.html:56
 msgid "forgot password?"
-msgstr "فراموشی رمز"
+msgstr "فراموشی رمزعبور"
 
 #: .\template\account\logout.html:9
 msgid "Are you sure you want to leave?"
@@ -182,7 +183,6 @@ msgid "Specifications book"
 msgstr "مشخصات کتاب"
 
 #: .\template\book\book_detail.html:118
-#| msgid "book page number"
 msgid "page number"
 msgstr "تعداد صفحات"
 
