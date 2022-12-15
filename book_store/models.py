@@ -43,3 +43,32 @@ class Book(models.Model):
         return reverse('book_store:book_detail', args=[self.id])
 
 
+class Comment(models.Model):
+    BOOK_SCORE = (
+        ('1', _('Very Bad')),
+        ('2', _('Bad')),
+        ('3', _('Normal')),
+        ('4', _('Good')),
+        ('5', _('Perfect')),
+    )
+
+    book = models.ForeignKey(
+        Book,
+        on_delete=models.CASCADE,
+        related_name='comments',
+        verbose_name=_('comment body'),
+    )
+    author = models.ForeignKey(
+        get_user_model(),
+        on_delete=models.CASCADE,
+        related_name='comments',
+        verbose_name=_('comment author'),
+    )
+    body = models.TextField(verbose_name=_('comment body'))
+    score = models.CharField(choices=BOOK_SCORE, max_length=10, verbose_name=_('Your Score'))
+
+    datetime_created = models.DateTimeField(auto_now_add=True, verbose_name=_('time create'))
+    active = models.BooleanField(default=True, verbose_name=_('active status'))
+
+    def __str__(self):
+        return self.body
