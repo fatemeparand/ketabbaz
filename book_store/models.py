@@ -69,6 +69,7 @@ class Comment(models.Model):
 
     datetime_created = models.DateTimeField(auto_now_add=True, verbose_name=_('time create'))
     active = models.BooleanField(default=True, verbose_name=_('active status'))
+    recommend = models.BooleanField(default=True, verbose_name=_('i recommend this book'))
 
     def __str__(self):
         return self.body

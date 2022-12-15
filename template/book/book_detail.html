@@ -145,6 +145,7 @@
                                             {{ book.comments.count }} {% trans 'comment for' %} {{ book.book_name }}
                                         </h3>
                                         {% for comment in book.comments.all %}
+                                            {% if comment.active %}
                                             <ul class="review__list">
                                                 <li class="review__item">
                                                     <div class="review__container">
@@ -160,6 +161,9 @@
                                                                         <span class="review__dash">-</span>
                                                                         <span class="review__published-date">
                                                                         {{ comment.datetime_created }}
+                                                                            {% if comment.recommend %}
+                                                                                <p>{% trans 'i recommend this book' %}</p>
+                                                                            {% endif %}
                                                                     </span>
                                                                     </div>
                                                                     <div class="product-rating">
@@ -177,6 +181,7 @@
                                                     </div>
                                                 </li>
                                             </ul>
+                                            {% endif %}
                                         {% endfor %}
                                         <div class="review-form-wrapper">
                                             <div class="row">

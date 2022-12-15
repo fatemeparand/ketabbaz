@@ -69,10 +69,22 @@ class BookDeleteView(generic.DeleteView):
 #     return render(request, 'book/book_list.html', context)
 
 
-# def book_detail_view(request, book_id):
-#     book = get_object_or_404(BookBlog, id=book_id)
+# def book_detail_view(request, pk):
+#     book = get_object_or_404(Book, id=pk)
 #
-#     context = {'book': book}
+#     if request.method == 'POST':
+#         comment_form = CommentForm(data= request.POST)
+#         if comment_form.is_valid():
+#             new_form = comment_form.save(commit=False)
+#             new_form.author = request.user
+#             new_form.book = book
+#             new_form.save()
+#             comment_form = CommentForm()
+#
+#     else:
+#         comment_form = CommentForm()
+#
+#     context = {'book': book, 'Comment_form': comment_form}
 #     return render(request, 'book/book_detail.html', context)
 
 # def book_create_view(request):

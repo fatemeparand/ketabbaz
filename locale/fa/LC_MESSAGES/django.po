@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-12 21:39+0330\n"
-"PO-Revision-Date: 2022-12-12 21:40+0330\n"
+"POT-Creation-Date: 2022-12-15 15:46+0330\n"
+"PO-Revision-Date: 2022-12-15 15:49+0330\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,25 +22,25 @@ msgstr ""
 msgid "subject"
 msgstr "موضوع"
 
-#: .\book_store\models.py:21 .\template\book\book_detail.html:99
+#: .\book_store\models.py:21 .\template\book\book_detail.html:104
 msgid "book name"
 msgstr "نام کتاب"
 
-#: .\book_store\models.py:22 .\template\book\book_detail.html:229
+#: .\book_store\models.py:22 .\template\book\book_detail.html:218
 msgid "book author"
 msgstr "نویسنده کتاب"
 
-#: .\book_store\models.py:23 .\template\book\book_detail.html:44
-#: .\template\book\book_detail.html:107
+#: .\book_store\models.py:23 .\template\book\book_detail.html:45
+#: .\template\book\book_detail.html:112
 msgid "translator"
 msgstr "مترجم"
 
-#: .\book_store\models.py:24 .\template\book\book_detail.html:110
-#: .\template\book\book_detail.html:122
+#: .\book_store\models.py:24 .\template\book\book_detail.html:115
+#: .\template\book\book_detail.html:127
 msgid "publisher"
 msgstr "ناشر"
 
-#: .\book_store\models.py:25 .\template\book\book_detail.html:114
+#: .\book_store\models.py:25 .\template\book\book_detail.html:119
 msgid "publication year"
 msgstr "سال انتشار"
 
@@ -64,7 +64,7 @@ msgstr "نویسنده"
 msgid "status"
 msgstr "وضعیت"
 
-#: .\book_store\models.py:32
+#: .\book_store\models.py:32 .\book_store\models.py:71
 msgid "active status"
 msgstr "وضعیت فعالیت"
 
@@ -79,6 +79,50 @@ msgstr "تاریخ ایجاد"
 #: .\book_store\models.py:37
 msgid "time modified"
 msgstr "تاریخ ویرایش"
+
+#: .\book_store\models.py:48
+msgid "Very Bad"
+msgstr "خیلی بد"
+
+#: .\book_store\models.py:49
+msgid "Bad"
+msgstr "بد"
+
+#: .\book_store\models.py:50
+msgid "Normal"
+msgstr "متوسط"
+
+#: .\book_store\models.py:51
+msgid "Good"
+msgstr "خوب"
+
+#: .\book_store\models.py:52
+msgid "Perfect"
+msgstr "عالی"
+
+#: .\book_store\models.py:59 .\book_store\models.py:67
+#| msgid "comments"
+msgid "comment body"
+msgstr "نظر:"
+
+#: .\book_store\models.py:65
+#| msgid "book author"
+msgid "comment author"
+msgstr "نویسنده کامنت"
+
+#: .\book_store\models.py:68
+msgid "Your Score"
+msgstr "امتیاز شما"
+
+#: .\book_store\models.py:70
+#, fuzzy
+#| msgid "time created"
+msgid "time create"
+msgstr "تاریخ ایجاد"
+
+#: .\book_store\models.py:72
+msgid "i recommend this book"
+msgstr "من این کتاب را توصیه میکنم"
 
 #: .\template\_base.html:60 .\template\book\book_list.html:5
 msgid "book store"
@@ -103,18 +147,19 @@ msgid "change password"
 msgstr "تغییر رمز عبور"
 
 #: .\template\_base.html:149 .\template\_base.html:491
-#: .\template\account\signup.html:6 .\template\account\signup.html:13
+#: .\template\account\signup.html:6 .\template\account\signup.html:16
+#: .\template\account\signup.html:36 .\template\account\signup.html:51
 msgid "signup"
 msgstr "ثبت نام"
 
 #: .\template\_base.html:150 .\template\_base.html:492
 #: .\template\account\login.html:6 .\template\account\login.html:16
-#: .\template\account\login.html:38 .\template\account\login.html:55
+#: .\template\account\login.html:37
 #: .\template\registration\password_reset_complete.html:10
 msgid "login"
 msgstr "ورود"
 
-#: .\template\account\login.html:35 .\template\account\login.html:56
+#: .\template\account\login.html:34
 msgid "forgot password?"
 msgstr "فراموشی رمزعبور"
 
@@ -138,7 +183,8 @@ msgstr "اطلاعات کتاب خود را وارد کنید:"
 msgid "create"
 msgstr "ایجاد"
 
-#: .\template\book\book_delete.html:6 .\template\book\book_detail.html:226
+#: .\template\book\book_delete.html:6 .\template\book\book_detail.html:49
+#: .\template\book\book_detail.html:215
 msgid "delete"
 msgstr "حذف"
 
@@ -150,51 +196,60 @@ msgstr "آیا میخواهید حذف شود "
 msgid "Yes"
 msgstr "بله"
 
-#: .\template\book\book_detail.html:15
+#: .\template\book\book_detail.html:16
 msgid "book introduction"
 msgstr "معرفی کتاب"
 
-#: .\template\book\book_detail.html:41 .\template\book\book_detail.html:103
+#: .\template\book\book_detail.html:42 .\template\book\book_detail.html:108
 msgid "Author"
 msgstr "نویسنده"
 
-#: .\template\book\book_detail.html:48 .\template\book\book_list.html:63
-msgid "$"
-msgstr "تومان"
-
-#: .\template\book\book_detail.html:59
-msgid "Add To Cart"
-msgstr "اضافه به سبد خرید"
-
-#: .\template\book\book_detail.html:71
-msgid "introduction"
-msgstr "معرفی"
-
-#: .\template\book\book_detail.html:75
-msgid "Specifications"
-msgstr "مشخصات"
-
-#: .\template\book\book_detail.html:79
-msgid "comments"
-msgstr "نظرات"
-
-#: .\template\book\book_detail.html:94
-msgid "Specifications book"
-msgstr "مشخصات کتاب"
-
-#: .\template\book\book_detail.html:118
-msgid "page number"
-msgstr "تعداد صفحات"
-
-#: .\template\book\book_detail.html:126
-msgid "book subject"
-msgstr "موضوع کتاب"
-
-#: .\template\book\book_detail.html:225
+#: .\template\book\book_detail.html:48 .\template\book\book_detail.html:214
 msgid "Edit"
 msgstr "ویرایش"
 
-#: .\template\book\book_detail.html:231
+#: .\template\book\book_detail.html:53 .\template\book\book_list.html:63
+msgid "$"
+msgstr "تومان"
+
+#: .\template\book\book_detail.html:64
+msgid "Add To Cart"
+msgstr "اضافه به سبد خرید"
+
+#: .\template\book\book_detail.html:76
+msgid "introduction"
+msgstr "معرفی"
+
+#: .\template\book\book_detail.html:80
+msgid "Specifications"
+msgstr "مشخصات"
+
+#: .\template\book\book_detail.html:84
+msgid "comments"
+msgstr "نظرات"
+
+#: .\template\book\book_detail.html:99
+msgid "Specifications book"
+msgstr "مشخصات کتاب"
+
+#: .\template\book\book_detail.html:123
+msgid "page number"
+msgstr "تعداد صفحات"
+
+#: .\template\book\book_detail.html:131
+msgid "book subject"
+msgstr "موضوع کتاب"
+
+#: .\template\book\book_detail.html:145
+#| msgid "comments"
+msgid "comment for"
+msgstr "نظر برای"
+
+#: .\template\book\book_detail.html:194
+msgid "send"
+msgstr "ارسال"
+
+#: .\template\book\book_detail.html:220
 msgid "add by "
 msgstr "اضافه شده توسط "
 
