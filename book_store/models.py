@@ -13,9 +13,9 @@ class Subject(models.Model):
 
 class Book(models.Model):
     STATUS_CHOICES = (
-        ('preparing', 'Preparing'),
-        ('available', 'Available'),
-        ('not available', 'Not Available'),
+        ('preparing', _('Preparing')),
+        ('available', _('Available')),
+        ('not available', _('Not Available')),
     )
 
     book_name = models.CharField(max_length=100, verbose_name=_('book name'))
