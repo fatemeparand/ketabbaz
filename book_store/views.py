@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect
 from django.views import generic
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
-from .models import Book
-from .forms import BookForm
+from .models import Book, Comment
+from .forms import BookForm, CommentForm
 
 
 class BookListView(generic.ListView):
@@ -19,6 +19,26 @@ class BookDetailView(generic.DetailView):
     model = Book
     context_object_name = 'book'
     template_name = 'book/book_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['comment_form'] = CommentForm
+        return context
+
+
+class CommentCreateView(generic.CreateView):
+    model = Comment
+    form_class = CommentForm
+
+    def form_valid(self, form):
+        obj = form.save(commit=False)
+        obj.author = self.request.user
+
+        book_id = int(self.kwargs['pk'])
+        book = get_object_or_404(Book, id=book_id)
+        obj.book = book
+
+        return super().form_valid(form)
 
 
 class BookCreateView(generic.CreateView):

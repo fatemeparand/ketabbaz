@@ -72,3 +72,6 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.body
+
+    def get_absolute_url(self):
+        return reverse('book_store:book_detail', args=[self.book.id])
