@@ -44,11 +44,14 @@
                                 <h5 class="small my-1 mt-3"><span
                                         class="text-muted">{% trans 'translator' %}: </span>{{ book.translator }}</h5>
                             {% endif %}
-                            <div class="small mt-3">
-                                <a href="{% url 'book_store:book_update' book.id %}">{% trans 'Edit' %}</a>
-                                <a href="{% url 'book_store:book_delete' book.id %}">{% trans 'delete' %}</a>
-                            </div>
+                            {% if book.author == user %}
+                                <div class="small mt-3">
 
+                                    <a href="{% url 'book_store:book_update' book.id %}">{% trans 'Edit' %}</a>
+
+                                    <a href="{% url 'book_store:book_delete' book.id %}">{% trans 'delete' %}</a>
+                                </div>
+                            {% endif %}
                             <div class="my-5 py-5 product-price-wrapper mb--25">
                                 <span class="money text-success">{{ book.price }} {% trans '$' %}</span>
                             </div>
@@ -87,9 +90,9 @@
                             <div class="tab-content product-data-tab__content" id="product-tabContent">
                                 <div class="tab-pane fade show active" id="nav-description" role="tabpanel"
                                      aria-labelledby="nav-description-tab">
-                                     <h3 class="review__title">
-                                            {% trans 'book description' %} {{ book.book_name }}
-                                        </h3>
+                                    <h3 class="review__title">
+                                        {% trans 'book description' %} {{ book.book_name }}
+                                    </h3>
                                     <br>
 
                                     <div class="product-description text-justify ">
@@ -100,10 +103,10 @@
                                 <div class="tab-pane text-right" id="nav-info" role="tabpanel"
                                      aria-labelledby="nav-info-tab">
                                     <div class="table-content table-responsive">
-                                         <h3 class="review__title ">
+                                        <h3 class="review__title ">
                                             {% trans 'Specifications book' %} {{ book.book_name }}
                                         </h3>
-                                         <br>
+                                        <br>
                                         <table class="table shop_attributes">
 
                                             <tbody>
@@ -134,7 +137,7 @@
                                                 <th>{% trans 'book subject' %}</th>
                                                 <td>{{ book.subject }}</td>
                                             </tr>
-                                             <tr>
+                                            <tr>
                                                 <th>{% trans 'status' %}</th>
                                                 <td>{{ book.status }}</td>
                                             </tr>
@@ -153,41 +156,41 @@
                                         </h3>
                                         {% for comment in book.comments.all %}
                                             {% if comment.active %}
-                                            <ul class="review__list">
-                                                <li class="review__item">
-                                                    <div class="review__container">
-                                                        <div class="review__text">
-                                                            <div class="d-flex flex-sm-row flex-row">
-                                                                <img src="assets/img/others/comment-1.jpg"
-                                                                     alt="Review Avatar" class="review__avatar">
-                                                                <div>
-                                                                    <div class="review__meta">
-                                                                        <strong class="review__author px-4">
-                                                                            {{ comment.author.username }}
-                                                                        </strong>
-                                                                        <span class="review__dash">-</span>
-                                                                        <span class="review__published-date">
+                                                <ul class="review__list">
+                                                    <li class="review__item">
+                                                        <div class="review__container">
+                                                            <div class="review__text">
+                                                                <div class="d-flex flex-sm-row flex-row">
+                                                                    <img src="assets/img/others/comment-1.jpg"
+                                                                         alt="Review Avatar" class="review__avatar">
+                                                                    <div>
+                                                                        <div class="review__meta">
+                                                                            <strong class="review__author px-4">
+                                                                                {{ comment.author.username }}
+                                                                            </strong>
+                                                                            <span class="review__dash">-</span>
+                                                                            <span class="review__published-date">
                                                                         {{ comment.datetime_created }}
-                                                                            {% if comment.recommend %}
-                                                                                <p>{% trans 'i recommend this book' %}</p>
-                                                                            {% endif %}
+                                                                                {% if comment.recommend %}
+                                                                                    <p>{% trans 'i recommend this book' %}</p>
+                                                                                {% endif %}
                                                                     </span>
-                                                                    </div>
-                                                                    <div class="product-rating">
-                                                                        <div class="m-0 star-rating star-five">
+                                                                        </div>
+                                                                        <div class="product-rating">
+                                                                            <div class="m-0 star-rating star-five">
                                                                             <span>Rated <strong
                                                                                     class="rating">{{ comment.score }}</strong> out of 5</span>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                <p class="review__description text-right px-4">
+                                                                    {{ comment.body }}
+                                                                </p>
                                                             </div>
-                                                            <p class="review__description text-right px-4">
-                                                                {{ comment.body }}
-                                                            </p>
                                                         </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
+                                                    </li>
+                                                </ul>
                                             {% endif %}
                                         {% endfor %}
                                         <div class="review-form-wrapper">

@@ -1,8 +1,11 @@
+from abc import ABC
+
 from django.shortcuts import render, redirect
 from django.views import generic
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
 from .models import Book, Comment
 from .forms import BookForm, CommentForm
@@ -50,14 +53,22 @@ class BookCreateView(LoginRequiredMixin, generic.CreateView):
     template_name = 'book/book_create.html'
 
 
-class BookUpdateView(generic.UpdateView):
+class BookUpdateView(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user
+
     model = Book
     form_class = BookForm
     context_object_name = 'form'
     template_name = 'book/book_create.html'
 
 
-class BookDeleteView(generic.DeleteView):
+class BookDeleteView(LoginRequiredMixin,UserPassesTestMixin, generic.DeleteView):
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user
+
     model = Book
     context_object_name = 'book'
     success_url = reverse_lazy('book_store:book_list')
@@ -89,12 +100,13 @@ class BookDeleteView(generic.DeleteView):
 #     context = {'book': book, 'Comment_form': comment_form}
 #     return render(request, 'book/book_detail.html', context)
 
+# @login_required()
 # def book_create_view(request):
 #     if request.method == 'POST':
 #         form = BookForm(request.POST)
 #         if form.is_valid():
 #             form.save()
-#             return redirect('book:bookblog_list')
+#             return redirect('book:book_list')
 #     else:
 #         form = BookForm()
 #
@@ -102,21 +114,24 @@ class BookDeleteView(generic.DeleteView):
 #     return render(request, 'book/book_create.html', context)
 
 
-# def book_update_view(request, book_id):
-#     book = get_object_or_404(BookBlog, id=book_id)
+# @login_required()
+# def book_update_view(request, pk):
+#     book = get_object_or_404(Book, id=pk)
 #     form = BookForm(instance=book, data=request.POST or None)
 #     if form.is_valid():
 #         form.save()
-#         return redirect('book:bookblog_list')
+#         return redirect('book:book_list')
 #
 #     context = {'form': form}
 #     return render(request, 'book/book_create.html', context)
 
-# def book_delete_view(request, book_id):
-#     book = get_object_or_404(BookBlog, id=book_id)
+
+# @login_required()
+# def book_delete_view(request, pk):
+#     book = get_object_or_404(Book, id=pk)
 #     if request.method == 'POST':
 #         book.delete()
-#         return redirect('book:bookblog_list')
+#         return redirect('book:book_list')
 #
 #     context = {'book': book}
 #     return render(request, 'book/book_delete.html', context)
