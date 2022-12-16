@@ -198,13 +198,21 @@
                                                 <div class="border-top py-5 w-100"></div>
                                                 <div class="col-lg-8 m-auto">
                                                     <br>
-
-                                                    <form action="{% url 'book_store:comment_create' book.id %}"
-                                                          method="post">
-                                                        {% csrf_token %}
-                                                        {{ comment_form|crispy }}
-                                                        <input type="submit" value="{% trans 'send' %}">
-                                                    </form>
+                                                    {% if user.is_authenticated %}
+                                                        <p>{% trans 'please write your comment ' %}:</p>
+                                                        <form action="{% url 'book_store:comment_create' book.id %}"
+                                                              method="post">
+                                                            {% csrf_token %}
+                                                            {{ comment_form|crispy }}
+                                                            <input type="submit" value="{% trans 'send' %}">
+                                                        {% else %}
+                                                            <div class="jumbotron">
+                                                            <h4>{% trans 'to write your comment please ' %}
+                                                            <a href="{% url 'login' %}">{% trans 'log in' %}</a>
+                                                            </h4>
+                                                            </div>
+                                                        </form>
+                                                    {% endif %}
                                                 </div>
                                             </div>
                                         </div>
