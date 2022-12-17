@@ -71,8 +71,12 @@ class Comment(models.Model):
     active = models.BooleanField(default=True, verbose_name=_('active status'))
     recommend = models.BooleanField(default=True, verbose_name=_('i recommend this book'))
 
+
     def __str__(self):
         return self.body
 
     def get_absolute_url(self):
         return reverse('book_store:book_detail', args=[self.book.id])
+
+
+

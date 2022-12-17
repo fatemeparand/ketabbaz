@@ -1,6 +1,8 @@
 {% extends '_base.html' %}
 {% load crispy_forms_filters %}
 {% load i18n %}
+{% load comment_tags %}
+
 
 {% block page_title %}
     KetaBazan/{{ book.book_name }}
@@ -84,7 +86,7 @@
                                 </a>
                                 <a class="m-0 product-data-tab__link nav-link" id="nav-reviews-tab" data-toggle="tab"
                                    href="#nav-reviews" role="tab" aria-selected="true">
-                                    <span>{% trans 'comments' %} ({{ book.comments.count }})</span>
+                                    <span>{% trans 'comments' %} ({{ book.comments|only_active_comments|length }})</span>
                                 </a>
                             </div>
                             <div class="tab-content product-data-tab__content" id="product-tabContent">
@@ -152,46 +154,48 @@
                                      aria-labelledby="nav-reviews-tab">
                                     <div class="product-reviews">
                                         <h3 class="review__title">
-                                            {{ book.comments.count }} {% trans 'comment for' %} {{ book.book_name }}
+                                            {{ book.comments|only_active_comments|length }} {% trans 'comment for' %} {{ book.book_name }}
                                         </h3>
-                                        {% for comment in book.comments.all %}
-                                            {% if comment.active %}
-                                                <ul class="review__list">
-                                                    <li class="review__item">
-                                                        <div class="review__container">
-                                                            <div class="review__text">
-                                                                <div class="d-flex flex-sm-row flex-row">
-                                                                    <img src="assets/img/others/comment-1.jpg"
-                                                                         alt="Review Avatar" class="review__avatar">
-                                                                    <div>
-                                                                        <div class="review__meta">
-                                                                            <strong class="review__author px-4">
-                                                                                {{ comment.author.username }}
-                                                                            </strong>
-                                                                            <span class="review__dash">-</span>
-                                                                            <span class="review__published-date">
+                                        {% for comment in book.comments.all|only_active_comments %}
+                                            <ul class="review__list">
+                                                <li class="review__item">
+                                                    <div class="review__container">
+                                                        <div class="review__text">
+                                                            <div class="d-flex flex-sm-row flex-row">
+                                                                <img src="assets/img/others/comment-1.jpg"
+                                                                     alt="Review Avatar" class="review__avatar">
+                                                                <div>
+                                                                    <div class="review__meta">
+                                                                        <strong class="review__author px-4">
+                                                                            {{ comment.author.username }}
+                                                                        </strong>
+                                                                        <span class="review__dash">-</span>
+                                                                        <span class="review__published-date">
                                                                         {{ comment.datetime_created }}
-                                                                                {% if comment.recommend %}
-                                                                                    <p>{% trans 'i recommend this book' %}</p>
-                                                                                {% endif %}
+                                                                            {% if comment.recommend %}
+                                                                                <p>{% trans 'i recommend this book' %}</p>
+                                                                            {% else %}
+                                                                                <p>{% trans 'I do not recommend this book' %}</p>
+                                                                            {% endif %}
                                                                     </span>
-                                                                        </div>
-                                                                        <div class="product-rating">
-                                                                            <div class="m-0 star-rating star-five">
+                                                                    </div>
+                                                                    <div class="product-rating">
+                                                                        <div class="m-0 star-rating star-five">
                                                                             <span>Rated <strong
-                                                                                    class="rating">{{ comment.score }}</strong> out of 5</span>
-                                                                            </div>
+                                                                                    class="rating">
+                                                                                {{ comment.score }}
+                                                                            </strong> out of 5</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <p class="review__description text-right px-4">
-                                                                    {{ comment.body }}
-                                                                </p>
                                                             </div>
+                                                            <p class="review__description text-right px-4">
+                                                                {{ comment.body }}
+                                                            </p>
                                                         </div>
-                                                    </li>
-                                                </ul>
-                                            {% endif %}
+                                                    </div>
+                                                </li>
+                                            </ul>
                                         {% endfor %}
                                         <div class="review-form-wrapper">
                                             <div class="row">
@@ -205,11 +209,11 @@
                                                             {% csrf_token %}
                                                             {{ comment_form|crispy }}
                                                             <input type="submit" value="{% trans 'send' %}">
-                                                        {% else %}
+                                                            {% else %}
                                                             <div class="jumbotron">
-                                                            <h4>{% trans 'to write your comment please ' %}
-                                                            <a href="{% url 'login' %}">{% trans 'log in' %}</a>
-                                                            </h4>
+                                                                <h4>{% trans 'to write your comment please ' %}
+                                                                    <a href="{% url 'login' %}">{% trans 'log in' %}</a>
+                                                                </h4>
                                                             </div>
                                                         </form>
                                                     {% endif %}

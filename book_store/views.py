@@ -44,7 +44,7 @@ class CommentCreateView(generic.CreateView):
         obj.book = book
 
         return super().form_valid(form)
-
+    
 
 class BookCreateView(LoginRequiredMixin, generic.CreateView):
     model = Book
