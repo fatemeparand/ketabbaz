@@ -24,6 +24,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('book/', include('book_store.urls')),
+    path('cart/', include('cart.urls')),
 
     # rosetta(i18n)
     path('rosetta/', include('rosetta.urls')),
