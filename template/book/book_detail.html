@@ -57,18 +57,29 @@
                             <div class="my-5 py-5 product-price-wrapper mb--25">
                                 <span class="money text-success">{{ book.price }} {% trans '$' %}</span>
                             </div>
-                            <div class="product-action d-flex align-items-sm-center align-content-center mb--30">
-                                <div class="quantity-wrapper d-flex justify-content-start">
-                                    <div class="quantity">
-                                        <input type="number" class="quantity-input" name="qty" id="qty" value="1"
-                                               min="1">
+
+                            <form action="{% url 'cart:cart_add' book.id %}" method="post">
+                                {% csrf_token %}
+                                <div class="product-action d-flex align-items-sm-center align-content-center mb--30">
+                                    <div class="quantity-wrapper d-flex justify-content-start">
+                                        <div class="quantity">
+                                            <input type="number"
+                                                   class="quantity-input"
+                                                   name="quantity"
+                                                   id="qty"
+                                                   value="1"
+                                                   min="1"
+                                                   max="30">
+                                        </div>
                                     </div>
+                                    <button type="submit" class="btn btn-small btn-bg-red btn-color-white btn-hover-2">
+                                        {% trans 'Add To Cart' %}
+                                    </button>
                                 </div>
-                                <button type="button" class="btn btn-small btn-bg-red btn-color-white btn-hover-2"
-                                        onclick="window.location.href='cart.html'">
-                                    {% trans 'Add To Cart' %}
-                                </button>
-                            </div>
+                                {#                            {{ add_to_cart_form.as_p }}#}
+                                {#                            <button type="submit">{% trans 'Add To Cart' %}</button>#}
+                            </form>
+
                         </div>
                     </div>
                 </div>
@@ -139,7 +150,7 @@
                                                 <th>{% trans 'book subject' %}</th>
                                                 <td>{{ book.subject }}</td>
                                             </tr>
-                                             <tr>
+                                            <tr>
                                                 <th>{% trans 'status' %}</th>
                                                 <td>{{ book.status }}</td>
                                             </tr>

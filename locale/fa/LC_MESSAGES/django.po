@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-17 14:03+0330\n"
-"PO-Revision-Date: 2022-12-17 14:04+0330\n"
+"POT-Creation-Date: 2022-12-20 10:16+0330\n"
+"PO-Revision-Date: 2022-12-20 10:20+0330\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -34,28 +34,28 @@ msgstr "موجود"
 msgid "Not Available"
 msgstr "عدم موجودی"
 
-#: .\book_store\models.py:21 .\template\book\book_detail.html:116
+#: .\book_store\models.py:21 .\template\book\book_detail.html:122
 msgid "book name"
 msgstr "نام کتاب"
 
-#: .\book_store\models.py:22 .\template\book\book_detail.html:242
+#: .\book_store\models.py:22 .\template\book\book_detail.html:248
 msgid "book author"
 msgstr "نویسنده کتاب"
 
 #: .\book_store\models.py:23 .\template\book\book_detail.html:47
-#: .\template\book\book_detail.html:124
+#: .\template\book\book_detail.html:130
 msgid "translator"
 msgstr "مترجم"
 
-#: .\book_store\models.py:24 .\template\book\book_detail.html:127
+#: .\book_store\models.py:24 .\template\book\book_detail.html:133
 msgid "publisher"
 msgstr "ناشر"
 
-#: .\book_store\models.py:25 .\template\book\book_detail.html:131
+#: .\book_store\models.py:25 .\template\book\book_detail.html:137
 msgid "publication year"
 msgstr "سال انتشار"
 
-#: .\book_store\models.py:27 .\template\book\book_detail.html:96
+#: .\book_store\models.py:27 .\template\book\book_detail.html:102
 msgid "book description"
 msgstr "معرفی کتاب"
 
@@ -71,7 +71,7 @@ msgstr "صفحات کتاب"
 msgid "author"
 msgstr "نویسنده"
 
-#: .\book_store\models.py:31 .\template\book\book_detail.html:143
+#: .\book_store\models.py:31 .\template\book\book_detail.html:149
 msgid "status"
 msgstr "وضعیت"
 
@@ -127,11 +127,12 @@ msgstr "امتیاز شما"
 msgid "time create"
 msgstr "تاریخ ایجاد"
 
-#: .\book_store\models.py:72 .\template\book\book_detail.html:176
+#: .\book_store\models.py:72 .\template\book\book_detail.html:182
 msgid "i recommend this book"
 msgstr "من این کتاب را توصیه میکنم"
 
-#: .\template\_base.html:60 .\template\book\book_list.html:5
+#: .\template\_base.html:60 .\template\book\book_detail.html:8
+#: .\template\book\book_list.html:5
 msgid "book store"
 msgstr "فروشگاه کتاب"
 
@@ -199,7 +200,7 @@ msgid "create"
 msgstr "ایجاد"
 
 #: .\template\book\book_delete.html:6 .\template\book\book_detail.html:54
-#: .\template\book\book_detail.html:239
+#: .\template\book\book_detail.html:245
 msgid "delete"
 msgstr "حذف"
 
@@ -215,78 +216,82 @@ msgstr "بله"
 msgid "book introduction"
 msgstr "معرفی کتاب"
 
-#: .\template\book\book_detail.html:44 .\template\book\book_detail.html:120
+#: .\template\book\book_detail.html:44 .\template\book\book_detail.html:126
 msgid "Author"
 msgstr "نویسنده"
 
-#: .\template\book\book_detail.html:52 .\template\book\book_detail.html:238
+#: .\template\book\book_detail.html:52 .\template\book\book_detail.html:244
 msgid "Edit"
 msgstr "ویرایش"
 
 #: .\template\book\book_detail.html:58 .\template\book\book_list.html:63
+#: .\template\cart\cart_detail.html:59
 msgid "$"
 msgstr "تومان"
 
-#: .\template\book\book_detail.html:69
+#: .\template\book\book_detail.html:71
 msgid "Add To Cart"
 msgstr "اضافه به سبد خرید"
 
-#: .\template\book\book_detail.html:81
+#: .\template\book\book_detail.html:87
 msgid "introduction"
 msgstr "معرفی"
 
-#: .\template\book\book_detail.html:85
+#: .\template\book\book_detail.html:91
 msgid "Specifications"
 msgstr "مشخصات"
 
-#: .\template\book\book_detail.html:89
+#: .\template\book\book_detail.html:95
 msgid "comments"
 msgstr "نظرات"
 
-#: .\template\book\book_detail.html:109
+#: .\template\book\book_detail.html:115
 msgid "Specifications book"
 msgstr "مشخصات کتاب"
 
-#: .\template\book\book_detail.html:135
+#: .\template\book\book_detail.html:141
 msgid "page number"
 msgstr "تعداد صفحات"
 
-#: .\template\book\book_detail.html:139
+#: .\template\book\book_detail.html:145
 msgid "book subject"
 msgstr "موضوع کتاب"
 
-#: .\template\book\book_detail.html:157
+#: .\template\book\book_detail.html:163
 msgid "comment for"
 msgstr "نظر برای"
 
-#: .\template\book\book_detail.html:178
-#| msgid "i recommend this book"
+#: .\template\book\book_detail.html:184
 msgid "I do not recommend this book"
 msgstr "من این کتاب را توصیه نمیکنم"
 
-#: .\template\book\book_detail.html:206
+#: .\template\book\book_detail.html:212
 msgid "please write your comment "
 msgstr "لطفا نظر خود را بنویسید"
 
-#: .\template\book\book_detail.html:211
+#: .\template\book\book_detail.html:217
 msgid "send"
 msgstr "ارسال"
 
-#: .\template\book\book_detail.html:214
+#: .\template\book\book_detail.html:220
 msgid "to write your comment please "
 msgstr "برای نوشتن نظر خود لطفا"
 
-#: .\template\book\book_detail.html:215
+#: .\template\book\book_detail.html:221
 msgid "log in"
 msgstr "وارد شوید"
 
-#: .\template\book\book_detail.html:244
+#: .\template\book\book_detail.html:250
 msgid "add by "
 msgstr "اضافه شده توسط "
 
 #: .\template\book\book_list.html:71
 msgid "add new book"
 msgstr "اضافه کردن کتاب جدید"
+
+#: .\template\cart\cart_detail.html:5 .\template\cart\cart_detail.html:16
+msgid "shopping cart"
+msgstr "سبد خرید"
 
 #: .\template\pages\home.html:9
 msgid "Home Page"
