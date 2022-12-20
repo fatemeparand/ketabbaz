@@ -25,6 +25,7 @@ class Cart:
 
         self.save()
 
+    # save changes
     def save(self):
         self.session.modified = True
 
@@ -44,7 +45,7 @@ class Cart:
         cart = self.cart.copy()
 
         for book in books:
-            cart[book.id]['book.obj'] = book
+            cart[str(book.id)]['book_obj'] = book
 
         for item in cart.values():
             yield item
