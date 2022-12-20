@@ -45,7 +45,8 @@
                                             <tbody>
                                             {% for item in cart %}
                                                 <tr>
-                                                    <td class="product-remove text-left"><a href=""><i
+                                                    <td class="product-remove text-left">
+                                                        <a href="{% url 'cart:cart_remove' item.book_obj.id %}"><i
                                                             class="flaticon flaticon-cross"></i></a></td>
                                                     <td class="product-thumbnail text-left">
                                                         <img src="assets/img/products/prod-10-70x88.jpg"

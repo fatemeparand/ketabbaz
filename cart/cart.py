@@ -21,8 +21,7 @@ class Cart:
             self.cart[book_id] = {'quantity': quantity}
 
         else:
-            self.cart[book_id][quantity] += quantity
-
+            self.cart[book_id]['quantity'] += quantity
         self.save()
 
     # save changes
