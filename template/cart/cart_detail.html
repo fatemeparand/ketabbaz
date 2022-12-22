@@ -47,14 +47,14 @@
                                                 <tr>
                                                     <td class="product-remove text-left">
                                                         <a href="{% url 'cart:cart_remove' item.book_obj.id %}"><i
-                                                            class="flaticon flaticon-cross"></i></a></td>
+                                                                class="flaticon flaticon-cross"></i></a></td>
                                                     <td class="product-thumbnail text-left">
                                                         <img src="assets/img/products/prod-10-70x88.jpg"
                                                              alt="Product Thumnail">
                                                     </td>
-                                                    <td class="product-name wide-column">
+                                                    <td class="product-name">
                                                         <h3>
-                                                            <a href="product-details.html">{{ item.book_obj.book_name }}</a>
+                                                            <a href="{{ item.book_obj.get_absolute_url }}">{{ item.book_obj.book_name }}</a>
                                                         </h3>
                                                     </td>
                                                     <td class="product-price">
@@ -63,16 +63,26 @@
                                                             </span>
                                                     </td>
                                                     <td class="product-quantity">
-                                                        <div class="quantity">
-                                                            <input type="number"
-                                                                   class="quantity-input"
-                                                                   name="quantity"
-                                                                   id="qty-1"
-                                                                   value="{{ item.quantity }}"
-                                                                   min="1"
-                                                                   max="30">
-                                                        </div>
+                                                        <form class="d-flex"
+                                                              method="post"
+                                                              action="{% url 'cart:cart_add' item.book_obj.id %}">
+                                                            {% csrf_token %}
+                                                            <div class="quantity">
+                                                                <input type="number"
+                                                                       class="quantity-input"
+                                                                       name="quantity"
+                                                                       id="qty-1"
+                                                                       value="{{ item.quantity }}"
+                                                                       min="1"
+                                                                       max="30"
+                                                                >
+                                                            </div>
+                                                            {{ item.book_update_quantity_form.inplace }}
+                                                            <button class="small" type="submit"><i
+                                                                    class="fa fa-refresh"></i></button>
+                                                        </form>
                                                     </td>
+
                                                     <td class="product-total-price">
                                                             <span class="product-price-wrapper">
                                                                 <span class="money">۲۹۶,۰۰۰ تومان</span>
