@@ -1,4 +1,6 @@
 from book_store.models import Book
+from django.contrib import messages
+from django.utils.translation import gettext as _
 
 
 class Cart:
@@ -25,6 +27,8 @@ class Cart:
 
         else:
             self.cart[book_id]['quantity'] += quantity
+
+        messages.success(self.request, _('book successfully add to cart'))
         self.save()
 
     # save changes
@@ -37,6 +41,7 @@ class Cart:
 
         if book_id in self.cart:
             del self.cart[book_id]
+            messages.error(self.request, _('book remove from the cart'))
             self.save()
 
     # The ability to loop over books

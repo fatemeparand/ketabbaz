@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-22 13:46+0330\n"
-"PO-Revision-Date: 2022-12-22 13:49+0330\n"
+"POT-Creation-Date: 2022-12-22 15:24+0330\n"
+"PO-Revision-Date: 2022-12-22 15:24+0330\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -131,6 +131,15 @@ msgstr "تاریخ ایجاد"
 msgid "i recommend this book"
 msgstr "من این کتاب را توصیه میکنم"
 
+#: .\cart\cart.py:31
+msgid "book successfully add to cart"
+msgstr "کتاب با موفقیت به سبد خرید اضافه شد."
+
+#: .\cart\cart.py:44
+#| msgid "book successfully remove from the cart"
+msgid "book remove from the cart"
+msgstr "کتاب  از سبد خرید حذف شد."
+
 #: .\template\_base.html:60 .\template\book\book_detail.html:8
 #: .\template\book\book_list.html:5
 msgid "book store"
@@ -148,32 +157,22 @@ msgstr "حساب کاربری"
 msgid "Favorites"
 msgstr "علاقه مندی ها"
 
-#: .\template\_base.html:115 .\template\_base.html:484
-#: .\template\account\logout.html:5 .\template\account\logout.html:13
+#: .\template\_base.html:115 .\template\account\logout.html:5
+#: .\template\account\logout.html:13
 msgid "logout"
 msgstr "خروج"
 
-#: .\template\_base.html:121 .\template\_base.html:490
-#: .\template\account\signup.html:6 .\template\account\signup.html:16
-#: .\template\account\signup.html:36 .\template\account\signup.html:51
+#: .\template\_base.html:121 .\template\account\signup.html:6
+#: .\template\account\signup.html:16 .\template\account\signup.html:36
+#: .\template\account\signup.html:51
 msgid "signup"
 msgstr "ثبت نام"
 
-#: .\template\_base.html:122 .\template\_base.html:491
-#: .\template\account\login.html:6 .\template\account\login.html:16
-#: .\template\account\login.html:37
+#: .\template\_base.html:122 .\template\account\login.html:6
+#: .\template\account\login.html:16 .\template\account\login.html:37
 #: .\template\registration\password_reset_complete.html:10
 msgid "login"
 msgstr "ورود"
-
-#: .\template\_base.html:483
-msgid "hello"
-msgstr "سلام"
-
-#: .\template\_base.html:485
-#: .\template\registration\password_reset_confirm.html:13
-msgid "change password"
-msgstr "تغییر رمز عبور"
 
 #: .\template\account\login.html:34
 msgid "forgot password?"
@@ -226,7 +225,7 @@ msgstr "ویرایش"
 
 #: .\template\book\book_detail.html:58 .\template\book\book_list.html:63
 #: .\template\cart\cart_detail.html:64 .\template\cart\cart_detail.html:90
-#: .\template\cart\cart_detail.html:123
+#: .\template\cart\cart_detail.html:124
 msgid "$"
 msgstr "تومان"
 
@@ -306,7 +305,7 @@ msgstr ""
 msgid "Go Shopping"
 msgstr "بریم خرید"
 
-#: .\template\cart\cart_detail.html:119
+#: .\template\cart\cart_detail.html:120
 msgid "total price"
 msgstr "جمع کل"
 
@@ -347,6 +346,10 @@ msgstr "می توانید با رمز عبور جدید خود وارد شوید
 msgid "new password"
 msgstr "رمز عبور جدید"
 
+#: .\template\registration\password_reset_confirm.html:13
+msgid "change password"
+msgstr "تغییر رمز عبور"
+
 #: .\template\registration\password_reset_done.html:9
 msgid "please check your email, we have send you the instructions."
 msgstr ""
@@ -359,3 +362,6 @@ msgstr "بازنشانی رمز"
 #: .\template\registration\password_reset_form.html:13
 msgid "Send Email"
 msgstr "ارسال ایمیل"
+
+#~ msgid "hello"
+#~ msgstr "سلام"
