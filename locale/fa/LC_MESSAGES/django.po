@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-22 13:34+0330\n"
-"PO-Revision-Date: 2022-12-22 13:35+0330\n"
+"POT-Creation-Date: 2022-12-22 13:46+0330\n"
+"PO-Revision-Date: 2022-12-22 13:49+0330\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -225,8 +225,8 @@ msgid "Edit"
 msgstr "ویرایش"
 
 #: .\template\book\book_detail.html:58 .\template\book\book_list.html:63
-#: .\template\cart\cart_detail.html:62 .\template\cart\cart_detail.html:88
-#: .\template\cart\cart_detail.html:116
+#: .\template\cart\cart_detail.html:64 .\template\cart\cart_detail.html:90
+#: .\template\cart\cart_detail.html:123
 msgid "$"
 msgstr "تومان"
 
@@ -294,8 +294,19 @@ msgstr "اضافه کردن کتاب جدید"
 msgid "shopping cart"
 msgstr "سبد خرید"
 
-#: .\template\cart\cart_detail.html:112
-#| msgid "price"
+#: .\template\cart\cart_detail.html:100
+msgid ""
+"The cart is empty! Please look at the list of books and add your favorite to"
+" the shopping cart"
+msgstr ""
+"سبد خرید خالی است!!  لطفا لیست کتاب ها را نگاه کنید و کتاب مورد علاقه خود را"
+" به سبد خرید اضافه کنید"
+
+#: .\template\cart\cart_detail.html:101
+msgid "Go Shopping"
+msgstr "بریم خرید"
+
+#: .\template\cart\cart_detail.html:119
 msgid "total price"
 msgstr "جمع کل"
 

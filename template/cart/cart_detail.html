@@ -30,6 +30,8 @@
                         <form class="cart-form" action="#">
                             <div class="row no-gutters">
                                 <div class="col-12">
+                                 {% if cart %}
+
                                     <div class="table-content table-responsive">
                                         <table class="table text-center">
                                             <thead>
@@ -93,6 +95,12 @@
                                             {% endfor %}
                                         </table>
                                     </div>
+
+                                 {% else %}
+                                     <p>{% trans 'The cart is empty! Please look at the list of books and add your favorite to the shopping cart' %}</p>
+                                     <button type="button" class="btn btn-bg-sand" onclick="window.location.href={% url 'book_store:book_list' %}">{% trans 'Go Shopping' %}</button>
+{#                                     <a href="{% url 'book_store:book_list' %}">{% trans 'Go Shopping' %}</a>#}
+                                {% endif %}
                                 </div>
                             </div>
                             <div class="row no-gutters border-top pt--20 mt--20">
