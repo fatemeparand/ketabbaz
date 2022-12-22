@@ -64,7 +64,6 @@ class Cart:
 
     def get_total_price(self):
         book_id = self.cart.keys()
-        books = Book.objects.filter(id__in=book_id)
-        return sum(book.price for book in books)
+        return sum(item['quantity'] * item['book_obj'].price for item in self.cart.values())
 
 
