@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-23 21:06+0330\n"
-"PO-Revision-Date: 2022-12-23 21:07+0330\n"
+"POT-Creation-Date: 2022-12-23 21:37+0330\n"
+"PO-Revision-Date: 2022-12-23 21:29+0330\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -130,6 +130,10 @@ msgstr "تاریخ ایجاد"
 #: .\book_store\models.py:72 .\template\book\book_detail.html:185
 msgid "i recommend this book"
 msgstr "من این کتاب را توصیه میکنم"
+
+#: .\book_store\views.py:54
+msgid "book was updated successfully"
+msgstr "کتاب با موفقیت به روز شد."
 
 #: .\cart\cart.py:27
 msgid "number of book was updated  "
@@ -298,11 +302,11 @@ msgstr "سبد خرید"
 
 #: .\template\cart\cart_detail.html:100
 msgid ""
-"The cart is empty! Please look at the list of books and add your favorite to"
-" the shopping cart"
+"The cart is empty! Please look at the list of books and add your favorite to "
+"the shopping cart"
 msgstr ""
-"سبد خرید خالی است!!  لطفا لیست کتاب ها را نگاه کنید و کتاب مورد علاقه خود را"
-" به سبد خرید اضافه کنید"
+"سبد خرید خالی است!!  لطفا لیست کتاب ها را نگاه کنید و کتاب مورد علاقه خود را "
+"به سبد خرید اضافه کنید"
 
 #: .\template\cart\cart_detail.html:101
 msgid "Go Shopping"
@@ -365,6 +369,9 @@ msgstr "بازنشانی رمز"
 #: .\template\registration\password_reset_form.html:13
 msgid "Send Email"
 msgstr "ارسال ایمیل"
+
+#~ msgid "book was created successfully"
+#~ msgstr "کتاب با موفقیت ایجاد شد."
 
 #~ msgid "hello"
 #~ msgstr "سلام"

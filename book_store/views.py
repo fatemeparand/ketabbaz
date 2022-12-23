@@ -1,12 +1,11 @@
-from abc import ABC
-
-from django.shortcuts import render, redirect
 from django.views import generic
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.mixins import UserPassesTestMixin
-from django.contrib.auth.decorators import login_required
+from django.contrib.messages.views import SuccessMessageMixin
+from django.utils.translation import gettext as _
+
 from .models import Book, Comment
 from .forms import BookForm, CommentForm
 from cart.forms import AddToCartForm
@@ -48,14 +47,15 @@ class CommentCreateView(generic.CreateView):
         return super().form_valid(form)
     
 
-class BookCreateView(LoginRequiredMixin, generic.CreateView):
+class BookCreateView(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
     model = Book
     form_class = BookForm
     context_object_name = 'form'
+    success_message = _("book was created successfully")
     template_name = 'book/book_create.html'
 
 
-class BookUpdateView(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
+class BookUpdateView(LoginRequiredMixin,SuccessMessageMixin, UserPassesTestMixin, generic.UpdateView):
     def test_func(self):
         obj = self.get_object()
         return obj.author == self.request.user
@@ -63,10 +63,11 @@ class BookUpdateView(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView
     model = Book
     form_class = BookForm
     context_object_name = 'form'
+    success_message = _("book was updated successfully")
     template_name = 'book/book_create.html'
 
 
-class BookDeleteView(LoginRequiredMixin,UserPassesTestMixin, generic.DeleteView):
+class BookDeleteView(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
     def test_func(self):
         obj = self.get_object()
         return obj.author == self.request.user

@@ -61,7 +61,7 @@ class Cart:
 
     # Number of books
     def __len__(self):
-        return len(self.cart.keys())
+        return sum(item['quantity'] for item in self.cart.values())
 
     # Empty the shopping cart
     def clear(self):
