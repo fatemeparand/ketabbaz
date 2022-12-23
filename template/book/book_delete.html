@@ -1,6 +1,7 @@
 {% extends '_base.html' %}
 {% load crispy_forms_filters %}
 {% load i18n %}
+{% include 'cart/cart_sidebar.html' %}
 
 {% block page_title %}
     KetaBazan/{% trans 'delete' %} {{ book.book_name }}
@@ -15,4 +16,5 @@
         <input type="submit" value="{% trans 'Yes' %}">
         <a href="{{ book.get_absolute_url }}">{% trans 'No' %}</a>
     </form>
+    {% include 'cart/cart_sidebar.html' %}
 {% endblock %}

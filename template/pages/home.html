@@ -1,11 +1,13 @@
 {% extends '_base.html' %}
 {% load i18n %}
 
+
 {% block page_title %}
     KetaBazan
 {% endblock %}
 
 {% block content %}
     <p><b>{% trans 'Home Page' %}</b></p>
+    {% include 'cart/cart_sidebar.html' %}
 {% endblock %}
 

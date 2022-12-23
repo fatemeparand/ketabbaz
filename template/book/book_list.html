@@ -104,25 +104,8 @@
         </div>
     </div>
 </div>
-
+{% include 'cart/cart_sidebar.html' %}
 {% endblock %}
 
-         {% if page_obj.has_previous %}
-                                    <li>
-                                        <a href="?page={{ page_obj.previous_page_number }}" class="prev page-number">
-                                            <i class="fa fa-angle-double-left"></i>
-                                            {{ page_obj.previous_page_number }}
-                                        </a>
-                                    </li>
-                                {% endif %}
-                                <li><span class="current page-number">{{ page_obj.number }}</span></li>
-                                {% if page_obj.has_next %}
-                                    <li>
-                                        <a href="?page={{ page_obj.next_page_number }}" class="next page-number">
-                                            <i class="fa fa-angle-double-right"></i>
-                                            {{ page_obj.next_page_number }}
-                                        </a>
-                                    </li>
-                                {% endif %}
 
 
