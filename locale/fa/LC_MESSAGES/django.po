@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-24 01:15+0330\n"
-"PO-Revision-Date: 2022-12-24 01:16+0330\n"
+"POT-Creation-Date: 2022-12-24 01:58+0330\n"
+"PO-Revision-Date: 2022-12-24 01:58+0330\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -156,30 +156,43 @@ msgstr "کتاب  از سبد خرید حذف شد."
 msgid "book store"
 msgstr "فروشگاه کتاب"
 
-#: .\template\_base.html:75
+#: .\template\_base.html:65
+msgid "Short Story"
+msgstr "داستان کوتاه"
+
+#: .\template\_base.html:71
+msgid "Poetry"
+msgstr "شعر"
+
+#: .\template\_base.html:77
+#| msgid "Your Stories"
+msgid "Your Writings"
+msgstr "نوشته های شما"
+
+#: .\template\_base.html:82
 msgid "contact us"
 msgstr "تماس با ما"
 
-#: .\template\_base.html:105
+#: .\template\_base.html:112
 msgid "Account"
 msgstr "حساب کاربری"
 
-#: .\template\_base.html:112
+#: .\template\_base.html:119
 msgid "Favorites"
 msgstr "علاقه مندی ها"
 
-#: .\template\_base.html:115 .\template\account\logout.html:5
+#: .\template\_base.html:122 .\template\account\logout.html:5
 #: .\template\account\logout.html:13
 msgid "logout"
 msgstr "خروج"
 
-#: .\template\_base.html:121 .\template\account\signup.html:6
+#: .\template\_base.html:128 .\template\account\signup.html:6
 #: .\template\account\signup.html:16 .\template\account\signup.html:36
 #: .\template\account\signup.html:51
 msgid "signup"
 msgstr "ثبت نام"
 
-#: .\template\_base.html:122 .\template\account\login.html:6
+#: .\template\_base.html:129 .\template\account\login.html:6
 #: .\template\account\login.html:16 .\template\account\login.html:37
 #: .\template\registration\password_reset_complete.html:10
 msgid "login"
@@ -320,7 +333,6 @@ msgid "Shopping Cart"
 msgstr "سبد خرید"
 
 #: .\template\cart\cart_sidebar.html:42
-#| msgid "shopping cart"
 msgid "view shopping cart"
 msgstr "مشاهده سبد خرید"
 

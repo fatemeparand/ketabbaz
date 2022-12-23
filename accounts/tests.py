@@ -11,10 +11,6 @@ class SignupPageTest(TestCase):
         response = self.client.get('/accounts/signup/')
         self.assertEqual(response.status_code, 200)
 
-    def test_signup_url_by_name(self):
-        response = self.client.get(reverse('accounts:signup'))
-        self.assertEqual(response.status_code, 200)
-
     def test_signup_form(self):
         user = get_user_model().objects.create_user(
             self.username,
