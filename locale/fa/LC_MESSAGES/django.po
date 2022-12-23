@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-22 15:24+0330\n"
-"PO-Revision-Date: 2022-12-22 15:24+0330\n"
+"POT-Creation-Date: 2022-12-23 21:06+0330\n"
+"PO-Revision-Date: 2022-12-23 21:07+0330\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -131,12 +131,15 @@ msgstr "تاریخ ایجاد"
 msgid "i recommend this book"
 msgstr "من این کتاب را توصیه میکنم"
 
+#: .\cart\cart.py:27
+msgid "number of book was updated  "
+msgstr "تعداد کتاب به روز شد."
+
 #: .\cart\cart.py:31
-msgid "book successfully add to cart"
+msgid "book successfully added to cart"
 msgstr "کتاب با موفقیت به سبد خرید اضافه شد."
 
-#: .\cart\cart.py:44
-#| msgid "book successfully remove from the cart"
+#: .\cart\cart.py:45
 msgid "book remove from the cart"
 msgstr "کتاب  از سبد خرید حذف شد."
 
