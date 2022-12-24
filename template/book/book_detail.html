@@ -4,6 +4,7 @@
 {% load comment_tags %}
 {% load jalali_tags %}
 {% load persian_translation_tags %}
+{% load humanize %}
 
 
 
@@ -59,7 +60,7 @@
                                 </div>
                             {% endif %}
                             <div class="my-5 py-5 product-price-wrapper mb--25">
-                                <span class="money text-success">{{ book.price|translate_number }} {% trans '$' %}</span>
+                                <span class="money text-success">{{ book.price|intcomma:False|translate_number }} {% trans '$' %}</span>
                             </div>
 
                             <form action="{% url 'cart:cart_add' book.id %}" method="post">
