@@ -1,5 +1,6 @@
 {% extends '_base.html' %}
 {% load i18n %}
+{% load persian_translation_tags %}
 
 {% block page_title %}
     KetaBazan/{% trans 'shopping cart' %}
@@ -60,7 +61,7 @@
                                                     </td>
                                                     <td class="product-price">
                                                             <span class="product-price-wrapper">
-                                                                <span class="money">{{ item.book_obj.price }} {% trans '$' %}</span>
+                                                                <span class="money">{{ item.book_obj.price|translate_number }} {% trans '$' %}</span>
                                                             </span>
                                                     </td>
                                                     <td class="product-quantity">
@@ -86,7 +87,7 @@
 
                                                     <td class="product-total-price">
                                                             <span class="product-price-wrapper">
-                                                                <span class="money">{{ item.total_price }} {% trans '$' %}</span>
+                                                                <span class="money">{{ item.total_price|translate_number }} {% trans '$' %}</span>
                                                             </span>
                                                     </td>
                                                 </tr>
@@ -98,7 +99,7 @@
                                  {% else %}
                                      <p>{% trans 'The cart is empty! Please look at the list of books and add your favorite to the shopping cart' %}</p>
                                      <button type="button" class="btn btn-bg-sand" onclick="window.location.href={% url 'book_store:book_list' %}">{% trans 'Go Shopping' %}</button>
-{#                                     <a href="{% url 'book_store:book_list' %}">{% trans 'Go Shopping' %}</a>#}
+{#
                                 {% endif %}
                                 </div>
                             </div>
@@ -120,7 +121,7 @@
                                         </div>
                                         <div class="cart-calculator__item--value">
                                                 <span class="product-price-wrapper">
-                                                    <span class="money">{{ cart.get_total_price }} {% trans '$' %}</span>
+                                                    <span class="money">{{ cart.get_total_price|translate_number }} {% trans '$' %}</span>
                                                 </span>
                                         </div>
                                     </div>

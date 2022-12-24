@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+
     # third_party apps
     'rosetta',
     'crispy_forms',
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
     'pages',
     'book_store',
     'cart',
+    'persian_translate.apps.PersianTranslateConfig',
 ]
 
 MIDDLEWARE = [

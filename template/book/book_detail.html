@@ -3,6 +3,7 @@
 {% load i18n %}
 {% load comment_tags %}
 {% load jalali_tags %}
+{% load persian_translation_tags %}
 
 
 
@@ -58,7 +59,7 @@
                                 </div>
                             {% endif %}
                             <div class="my-5 py-5 product-price-wrapper mb--25">
-                                <span class="money text-success">{{ book.price }} {% trans '$' %}</span>
+                                <span class="money text-success">{{ book.price|translate_number }} {% trans '$' %}</span>
                             </div>
 
                             <form action="{% url 'cart:cart_add' book.id %}" method="post">
@@ -98,7 +99,7 @@
                                 </a>
                                 <a class="m-0 product-data-tab__link nav-link" id="nav-reviews-tab" data-toggle="tab"
                                    href="#nav-reviews" role="tab" aria-selected="true">
-                                    <span>{% trans 'comments' %} ({{ book.comments|only_active_comments|length }})</span>
+                                    <span>{% trans 'comments' %} ({{ book.comments|only_active_comments|length|translate_number }})</span>
                                 </a>
                             </div>
                             <div class="tab-content product-data-tab__content" id="product-tabContent">
@@ -141,11 +142,11 @@
                                             </tr>
                                             <tr>
                                                 <th>{% trans 'publication year' %}</th>
-                                                <td>{{ book.publication_year }}</td>
+                                                <td>{{ book.publication_year|translate_number }}</td>
                                             </tr>
                                             <tr>
                                                 <th>{% trans 'page number' %}</th>
-                                                <td>{{ book.book_page }}</td>
+                                                <td>{{ book.book_page|translate_number }}</td>
                                             </tr>
                                             <tr>
                                                 <th>{% trans 'book subject' %}</th>
@@ -166,7 +167,7 @@
                                      aria-labelledby="nav-reviews-tab">
                                     <div class="product-reviews">
                                         <h3 class="review__title">
-                                            {{ book.comments|only_active_comments|length }} {% trans 'comment for' %} {{ book.book_name }}
+                                            {{ book.comments|only_active_comments|length|translate_number }} {% trans 'comment for' %} {{ book.book_name }}
                                         </h3>
                                         {% for comment in book.comments.all|only_active_comments %}
                                             <ul class="review__list">
@@ -183,7 +184,7 @@
                                                                         </strong>
                                                                         <span class="review__dash">-</span>
                                                                         <span class="review__published-date">
-                                                                        {{ comment.datetime_created|to_jalali:'%Y/%m/%d' }}
+                                                                        {{ comment.datetime_created|to_jalali:'%Y/%m/%d'|translate_number }}
 
                                                                     </span>
                                                                     </div>
