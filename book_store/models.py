@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
+from ckeditor.fields import RichTextField
 
 
 class Subject(models.Model):
@@ -24,14 +25,14 @@ class Book(models.Model):
     publisher = models.CharField(max_length=50, verbose_name=_('publisher'))
     publication_year = models.PositiveIntegerField(verbose_name=_('publication year'))
 
-    description = models.TextField(verbose_name=_('book description'))
+    description = RichTextField(verbose_name=_('book description'))
     price = models.PositiveIntegerField(default=0, verbose_name=_('price'))
     book_page = models.PositiveIntegerField(verbose_name=_('number of book page'), blank=True)
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, verbose_name=_('author'))
     status = models.CharField(choices=STATUS_CHOICES, max_length=13, verbose_name=_('status'))
     active = models.BooleanField(default=True, verbose_name=_('active status'))
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE, verbose_name=_('subject'),)
-    image = models.ImageField(upload_to='book_cover/', blank=True, verbose_name=_('book image'))
+    image = models.ImageField(upload_to='book_cover/', blank=True,null=True, verbose_name=_('book image'))
 
     datetime_created = models.DateTimeField(auto_now_add=True, verbose_name=_('time created'))
     datetime_modified = models.DateTimeField(auto_now=True, verbose_name=_('time modified'))
@@ -70,7 +71,6 @@ class Comment(models.Model):
     datetime_created = models.DateTimeField(auto_now_add=True, verbose_name=_('time create'))
     active = models.BooleanField(default=True, verbose_name=_('active status'))
     recommend = models.BooleanField(default=True, verbose_name=_('i recommend this book'))
-
 
     def __str__(self):
         return self.body
