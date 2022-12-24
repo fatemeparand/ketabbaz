@@ -2,6 +2,7 @@
 {% load crispy_forms_filters %}
 {% load i18n %}
 {% load comment_tags %}
+{% load jalali_tags %}
 
 
 
@@ -53,6 +54,7 @@
                                     <a href="{% url 'book_store:book_update' book.id %}">{% trans 'Edit' %}</a>
 
                                     <a href="{% url 'book_store:book_delete' book.id %}">{% trans 'delete' %}</a>
+
                                 </div>
                             {% endif %}
                             <div class="my-5 py-5 product-price-wrapper mb--25">
@@ -176,17 +178,13 @@
                                                                      alt="Review Avatar" class="review__avatar">
                                                                 <div>
                                                                     <div class="review__meta">
-                                                                        <strong class="review__author px-4">
+                                                                        <strong class="review__author px-4" dir="ltr">
                                                                             {{ comment.author.username }}
                                                                         </strong>
                                                                         <span class="review__dash">-</span>
                                                                         <span class="review__published-date">
-                                                                        {{ comment.datetime_created }}
-                                                                            {% if comment.recommend %}
-                                                                                <p>{% trans 'i recommend this book' %}</p>
-                                                                            {% else %}
-                                                                                <p>{% trans 'I do not recommend this book' %}</p>
-                                                                            {% endif %}
+                                                                        {{ comment.datetime_created|to_jalali:'%Y/%m/%d' }}
+
                                                                     </span>
                                                                     </div>
                                                                     <div class="product-rating">

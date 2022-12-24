@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'allauth',
     'allauth.account',
+    'jalali_date',
 
     # my apps
     'accounts',
