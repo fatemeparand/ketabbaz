@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="d-flex justify-content-between align-items-center flex-sm-row flex-column">
-                        <h1 class="page-title">سفارش</h1>
+                        <h1 class="page-title">{% trans 'checkout' %}</h1>
                     </div>
                 </div>
             </div>
@@ -38,49 +38,64 @@
                         <div class="checkout-form">
                             <form action="" method="post" class="form form--checkout">
                                 {% csrf_token %}
-                                <div class="form-row mb--20">
-                                    <div class="form__group col-md-6 mb-sm--30">
-                                        <label for="billing_fname" class="form__label form__label--2">{% trans 'name' %} <span
-                                                class="required">*</span></label>
-                                        <input type="text" name="first_name" id="billing_fname"
-                                               class="form__input form__input--2">
-                                    </div>
-                                    <div class="form__group col-md-6">
-                                        <label for="billing_lname" class="form__label form__label--2">{% trans 'last name' %}<span
-                                                class="required">*</span></label>
-                                        <input type="text" name="last_name" id="billing_lname"
-                                               class="form__input form__input--2">
-                                    </div>
-                                </div>
-                                <div class="form-row mb--20">
-                                    <div class="form__group col-12">
-                                        <label for="billing_address" class="form__label form__label--2">{% trans 'address' %}</label>
-                                        <input type="text" name="address" id="billing_address"
-                                               class="form__input form__input--2">
-                                    </div>
-                                </div>
-                                <div class="form-row mb--20">
-                                    <div class="form__group col-12">
-                                        <label for="billing_phone" class="form__label form__label--2">{% trans 'phone number' %} <span
-                                                class="required">*</span></label>
-                                        <input type="text" name="phone_number" id="billing_phone"
-                                               class="form__input form__input--2"
-                                         placeholder="{% trans '09121111111' %}">
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form__group col-12">
-                                        <label for="orderNotes" class="form__label form__label--2">{% trans 'Your Note' %}</label>
-                                        <textarea class="form__input form__input--2 form__input--textarea"
-                                                  id="orderNotes" name="order_notes"
-                                                  placeholder="{% trans 'If you have a note, enter it here. Otherwise, leave this field blank' %}"></textarea>
-{#                                        اگر یادداشتی دارید در اینجا وارد کنید. در غیر این صورت این مکان را خالی بگذارید#}
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn btn-small btn-bg-red btn-color-white btn-hover-2">
-                                    {% trans 'Finish' %}
-                                </button>
+{#                                {% if form.errors %}#}
+{#                                    <div class="alert alert-dismissible">#}
+                                        <div class="form-row mb--20">
+                                            <div class="form__group col-md-6 mb-sm--30">
+                                                <label for="billing_fname"
+                                                       class="form__label form__label--2">{% trans 'name' %} <span
+                                                        class="required">*</span></label>
+                                                <input type="text" name="{{ form.first_name.name }}" id="billing_fname"
+                                                       class="form__input form__input--2">
+                                                {{ form.first_name.errors }}
+                                            </div>
+                                            <div class="form__group col-md-6">
+                                                <label for="billing_lname"
+                                                       class="form__label form__label--2">{% trans 'family' %}<span
+                                                        class="required">*</span></label>
+                                                <input type="text" name="{{ form.last_name.name }}" id="billing_lname"
+                                                       class="form__input form__input--2">
+                                                {{ form.last_name.errors }}
+                                            </div>
+                                        </div>
+                                        <div class="form-row mb--20">
+                                            <div class="form__group col-12">
+                                                <label for="billing_address"
+                                                       class="form__label form__label--2">{% trans 'address' %}</label>
+                                                <input type="text" name="{{ form.address.name }}" id="billing_address"
+                                                       class="form__input form__input--2">
+                                                {{ form.address.errors }}
+                                            </div>
+                                        </div>
+                                        <div class="form-row mb--20">
+                                            <div class="form__group col-12">
+                                                <label for="billing_phone"
+                                                       class="form__label form__label--2">{% trans 'phone number' %}
+                                                    <span
+                                                            class="required">*</span></label>
+                                                <input type="text" name="{{ form.phone_number.name }}"
+                                                       id="billing_phone"
+                                                       class="form__input form__input--2"
+                                                       placeholder="{% trans '09121111111' %}">
+                                                {{ form.phone_number.errors }}
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form__group col-12">
+                                                <label for="orderNotes"
+                                                       class="form__label form__label--2">{% trans 'Your Note' %}</label>
+                                                <textarea class="form__input form__input--2 form__input--textarea"
+                                                          id="orderNotes" name="{{ form.order_notes.name }}"
+                                                          placeholder=" اگر یادداشتی دارید در اینجا وارد کنید. در غیر این صورت این مکان را خالی بگذارید"></textarea>
+                                            </div>
+                                        </div>
 
+                                        <button type="submit"
+                                                class="btn btn-small btn-bg-red btn-color-white btn-hover-2">
+                                            {% trans 'Finish' %}
+                                        </button>
+{#                                    </div>#}
+{#                                {% endif %}#}
                             </form>
                         </div>
                     </div>
