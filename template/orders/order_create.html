@@ -2,7 +2,7 @@
 {% load i18n %}
 {% load persian_translation_tags %}
 {% load humanize %}
-
+{% load crispy_forms_filters %}
 
 {% block page_title %}
     KetaBazan/{% trans 'checkout' %}
@@ -32,63 +32,62 @@
                     <!-- Checkout Area Start -->
                     <div class="col-lg-6">
                         <div class="checkout-title mt--10">
-                            <h2>جزئیات سفارش</h2>
+                            <h2>{% trans 'Order Detail' %}</h2>
                         </div>
 
                         <div class="checkout-form">
-                            <form action="#" class="form form--checkout">
+                            <form action="" method="post" class="form form--checkout">
+                                {% csrf_token %}
                                 <div class="form-row mb--20">
                                     <div class="form__group col-md-6 mb-sm--30">
-                                        <label for="billing_fname" class="form__label form__label--2">نام <span
+                                        <label for="billing_fname" class="form__label form__label--2">{% trans 'name' %} <span
                                                 class="required">*</span></label>
-                                        <input type="text" name="billing_fname" id="billing_fname"
+                                        <input type="text" name="first_name" id="billing_fname"
                                                class="form__input form__input--2">
                                     </div>
                                     <div class="form__group col-md-6">
-                                        <label for="billing_lname" class="form__label form__label--2">نام خانوادگی <span
+                                        <label for="billing_lname" class="form__label form__label--2">{% trans 'last name' %}<span
                                                 class="required">*</span></label>
-                                        <input type="text" name="billing_lname" id="billing_lname"
+                                        <input type="text" name="last_name" id="billing_lname"
                                                class="form__input form__input--2">
                                     </div>
                                 </div>
                                 <div class="form-row mb--20">
                                     <div class="form__group col-12">
-                                        <label for="billing_company" class="form__label form__label--2">آدرس</label>
-                                        <input type="text" name="billing_company" id="billing_company"
+                                        <label for="billing_address" class="form__label form__label--2">{% trans 'address' %}</label>
+                                        <input type="text" name="address" id="billing_address"
                                                class="form__input form__input--2">
                                     </div>
                                 </div>
                                 <div class="form-row mb--20">
                                     <div class="form__group col-12">
-                                        <label for="billing_phone" class="form__label form__label--2">شماره همراه <span
+                                        <label for="billing_phone" class="form__label form__label--2">{% trans 'phone number' %} <span
                                                 class="required">*</span></label>
-                                        <input type="text" name="billing_phone" id="billing_phone"
-                                               class="form__input form__input--2">
-                                    </div>
-                                </div>
-                                <div class="form-row mb--20">
-                                    <div class="form__group col-12">
-                                        <label for="billing_email" class="form__label form__label--2">ایمیل <span
-                                                class="required">*</span></label>
-                                        <input type="email" name="billing_email" id="billing_email"
-                                               class="form__input form__input--2">
+                                        <input type="text" name="phone_number" id="billing_phone"
+                                               class="form__input form__input--2"
+                                         placeholder="{% trans '09121111111' %}">
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form__group col-12">
-                                        <label for="orderNotes" class="form__label form__label--2">یادداشت شما</label>
+                                        <label for="orderNotes" class="form__label form__label--2">{% trans 'Your Note' %}</label>
                                         <textarea class="form__input form__input--2 form__input--textarea"
-                                                  id="orderNotes" name="orderNotes"
-                                                  placeholder="اگر یادداشتی دارید در اینجا وارد کنید. در غیر این صورت این مکان را خالی بگذارید"></textarea>
+                                                  id="orderNotes" name="order_notes"
+                                                  placeholder="{% trans 'If you have a note, enter it here. Otherwise, leave this field blank' %}"></textarea>
+{#                                        اگر یادداشتی دارید در اینجا وارد کنید. در غیر این صورت این مکان را خالی بگذارید#}
                                     </div>
                                 </div>
+                                <button type="submit" class="btn btn-small btn-bg-red btn-color-white btn-hover-2">
+                                    {% trans 'Finish' %}
+                                </button>
+
                             </form>
                         </div>
                     </div>
                     <div class="col-xl-5 offset-xl-1 col-lg-6 mt-md--40">
                         <div class="order-details">
                             <div class="checkout-title mt--10">
-                                <h2>سفارش شما</h2>
+                                <h2>{% trans 'Your Order' %}</h2>
                             </div>
                             <div class="table-content table-responsive mb--30">
                                 <table class="table order-table order-table-2">
@@ -101,14 +100,13 @@
                                     <tbody>
                                     {% for item in cart %}
                                         <tr>
-                                        <th>{{ item.book_obj.book_name }}
-                                            <strong><span>&#10005;</span>{{ item.quantity }}</strong>
-                                        </th>
-                                        <td class="text-center">{{ item.book_obj.price|intcomma:False|translate_number }}
-                                            {% trans '$' %}</td>
-                                    </tr>
+                                            <th>{{ item.book_obj.book_name }}
+                                                <strong><span>&#10005;</span>{{ item.quantity }}</strong>
+                                            </th>
+                                            <td class="text-center">{{ item.book_obj.price|intcomma:False|translate_number }}
+                                                {% trans '$' %}</td>
+                                        </tr>
                                     {% endfor %}
-
 
 
                                     </tbody>
@@ -116,7 +114,7 @@
                                     <tr class="cart-subtotal">
                                         <th>{% trans 'total' %}</th>
                                         <td class="text-center">{{ cart.get_total_price|intcomma:False|translate_number }}
-                                        {% trans '$' %}</td>
+                                            {% trans '$' %}</td>
                                     </tr>
                                     </tfoot>
                                 </table>
