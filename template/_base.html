@@ -163,10 +163,11 @@
                 {% endblock %}
 
             </div>
+        {% if not request.resolver_match.url_name == 'cart_detail'  %}
             <div class="col-2 ">
 
                 <div class="card bg-light">
-{#                    <h5 class="card-header">About</h5>#}
+                    {# <h5 class="card-header">About</h5>#}
                     <div class="card-body">
                         <p>
                             فیتزجرالد سال ۱۹۳۷ پس از بستن قراردادی با کمپانی رسانه‌ای «ام‌جی‌ام» به لس‌آنجلس مهاجرت
@@ -190,6 +191,8 @@
                 </div>
 
             </div>
+        {% endif %}
+
         </div>
     </div>
 

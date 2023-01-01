@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'book_store',
     'cart',
     'persian_translate.apps.PersianTranslateConfig',
+    'orders',
 ]
 
 MIDDLEWARE = [
