@@ -1,5 +1,8 @@
 {% extends '_base.html' %}
 {% load i18n %}
+{% load persian_translation_tags %}
+{% load humanize %}
+
 
 {% block page_title %}
     KetaBazan/{% trans 'checkout' %}
@@ -31,6 +34,7 @@
                         <div class="checkout-title mt--10">
                             <h2>جزئیات سفارش</h2>
                         </div>
+
                         <div class="checkout-form">
                             <form action="#" class="form form--checkout">
                                 <div class="form-row mb--20">
@@ -90,28 +94,29 @@
                                 <table class="table order-table order-table-2">
                                     <thead>
                                     <tr>
-                                        <th>محصول</th>
-                                        <th class="text-right">قیمت نهایی</th>
+                                        <th>{% trans 'product' %}</th>
+                                        <th class="text-right">{% trans 'final price' %}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <th>محصول شماره یک
-                                            <strong><span>&#10005;</span>۲</strong>
+                                    {% for item in cart %}
+                                        <tr>
+                                        <th>{{ item.book_obj.book_name }}
+                                            <strong><span>&#10005;</span>{{ item.quantity }}</strong>
                                         </th>
-                                        <td class="text-right">۲۹۶,۰۰۰ تومان</td>
+                                        <td class="text-center">{{ item.book_obj.price|intcomma:False|translate_number }}
+                                            {% trans '$' %}</td>
                                     </tr>
-                                    <tr>
-                                        <th>محصول شماره دو
-                                            <strong><span>&#10005;</span>۱</strong>
-                                        </th>
-                                        <td class="text-right">۵۸,۰۰۰ تومان</td>
-                                    </tr>
+                                    {% endfor %}
+
+
+
                                     </tbody>
                                     <tfoot>
                                     <tr class="cart-subtotal">
-                                        <th>مجموع</th>
-                                        <td class="text-right">۳۴۸,۰۰۰ تومان</td>
+                                        <th>{% trans 'total' %}</th>
+                                        <td class="text-center">{{ cart.get_total_price|intcomma:False|translate_number }}
+                                        {% trans '$' %}</td>
                                     </tr>
                                     </tfoot>
                                 </table>

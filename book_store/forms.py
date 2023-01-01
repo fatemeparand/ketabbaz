@@ -19,9 +19,11 @@ class BookForm(forms.ModelForm):
             'subject',
             'image',
         ]
+        # widgets = {'description': forms.Textarea(attrs={'col': 120, 'row': 10})}
 
 
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ['body', 'score', 'recommend',]
+

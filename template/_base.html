@@ -163,7 +163,7 @@
                 {% endblock %}
 
             </div>
-        {% if not request.resolver_match.url_name == 'cart_detail'  %}
+        {% if not request.resolver_match.url_name == 'cart_detail' and not request.resolver_match.url_name == 'order_create' %}
             <div class="col-2 ">
 
                 <div class="card bg-light">
