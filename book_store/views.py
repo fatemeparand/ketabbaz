@@ -58,7 +58,7 @@ def book_create_view(request):
             new_form = form.save(commit=False)
             new_form.author = request.user
             new_form.save()
-            messages.success(request, 'book was created successfully.')
+            messages.success(request, 'book was created successfully')
             return redirect('book_store:book_list')
     else:
         form = BookForm()
