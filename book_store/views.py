@@ -1,10 +1,13 @@
+from django.shortcuts import render, redirect
 from django.views import generic
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.utils.translation import gettext as _
+from django.contrib import messages
 
 from .models import Book, Comment
 from .forms import BookForm, CommentForm
@@ -47,15 +50,24 @@ class CommentCreateView(generic.CreateView):
         return super().form_valid(form)
     
 
-class BookCreateView(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
-    model = Book
-    form_class = BookForm
-    context_object_name = 'form'
-    success_message = _("book was created successfully")
-    template_name = 'book/book_create.html'
+@login_required()
+def book_create_view(request):
+    if request.method == 'POST':
+        form = BookForm(request.POST)
+        if form.is_valid():
+            new_form = form.save(commit=False)
+            new_form.author = request.user
+            new_form.save()
+            messages.success(request, 'book was created successfully.')
+            return redirect('book_store:book_list')
+    else:
+        form = BookForm()
+
+    context = {'form': form}
+    return render(request, 'book/book_create.html', context)
 
 
-class BookUpdateView(LoginRequiredMixin,SuccessMessageMixin, UserPassesTestMixin, generic.UpdateView):
+class BookUpdateView(LoginRequiredMixin, SuccessMessageMixin, UserPassesTestMixin, generic.UpdateView):
     def test_func(self):
         obj = self.get_object()
         return obj.author == self.request.user
@@ -103,18 +115,14 @@ class BookDeleteView(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView
 #     context = {'book': book, 'Comment_form': comment_form}
 #     return render(request, 'book/book_detail.html', context)
 
-# @login_required()
-# def book_create_view(request):
-#     if request.method == 'POST':
-#         form = BookForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('book:book_list')
-#     else:
-#         form = BookForm()
-#
-#     context = {'form': form}
-#     return render(request, 'book/book_create.html', context)
+
+# class BookCreateView(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
+#     model = Book
+#     form_class = BookForm
+#     context_object_name = 'form'
+#     success_message = _("book was created successfully")
+#     template_name = 'book/book_create.html'
+
 
 
 # @login_required()

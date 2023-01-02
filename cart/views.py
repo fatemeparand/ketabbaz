@@ -47,5 +47,3 @@ def remove_from_cart(request, book_id):
 
     return redirect('cart:cart_detail')
 
-
-

@@ -14,12 +14,11 @@ class BookForm(forms.ModelForm):
             'description',
             'price',
             'book_page',
-            'author',
             'status',
             'subject',
             'image',
         ]
-        # widgets = {'description': forms.Textarea(attrs={'col': 120, 'row': 10})}
+        widgets = {'description': forms.Textarea(attrs={'cols': 120})}
 
 
 class CommentForm(forms.ModelForm):
