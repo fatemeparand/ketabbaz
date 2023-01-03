@@ -105,17 +105,17 @@
                             </div>
                         </div>
                         {% if cart|length %}
-                        <div class="row no-gutters border-top pt--20 mt--20">
-                            <div class="col-sm-6 text-sm-right">
+                            <div class="row no-gutters border-top pt--20 mt--20">
+                                <div class="col-sm-6 text-sm-right">
 
                                     <form action="{% url 'cart:cart_clear' %}" method="post">
-                                    {% csrf_token %}
-                                    <button type="submit" class="cart-form__btn">{% trans 'Empty cart' %}</button>
+                                        {% csrf_token %}
+                                        <button type="submit" class="cart-form__btn">{% trans 'Empty cart' %}</button>
 
-                                </form>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
-                    {% endif %}
+                        {% endif %}
 
 
                     </div>
@@ -136,10 +136,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="{% url 'orders:order_create' %}"
+                            {% if cart|length %}
+                                <a href="{% url 'orders:order_create' %}"
+                                   class="btn btn-fullwidth btn-bg-red btn-color-white btn-hover-2">
+                                    {% trans 'Finish' %}
+                                </a>
+                            {% else %}
+                                <a href=""
                                class="btn btn-fullwidth btn-bg-red btn-color-white btn-hover-2">
-                                {% trans 'checkout' %}
+                                {% trans 'Finish' %}
                             </a>
+                            {% endif %}
+
                         </div>
                     </div>
                 </div>

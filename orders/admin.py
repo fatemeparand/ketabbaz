@@ -5,6 +5,7 @@ from .models import Order, OrderItem
 class OrderItemInline(admin.TabularInline):
     model = OrderItem
     fields = ['order', 'book', 'quantity', 'price', ]
+    extra = 1
 
 
 @admin.register(Order)
