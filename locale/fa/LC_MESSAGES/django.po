@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-02 01:43+0330\n"
-"PO-Revision-Date: 2023-01-02 01:46+0330\n"
+"POT-Creation-Date: 2023-01-03 16:36+0330\n"
+"PO-Revision-Date: 2023-01-03 16:36+0330\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -131,11 +131,7 @@ msgstr "تاریخ ایجاد"
 msgid "i recommend this book"
 msgstr "من این کتاب را توصیه میکنم"
 
-#: .\book_store\views.py:54
-msgid "book was created successfully"
-msgstr "کتاب با موفقیت ایجاد شد."
-
-#: .\book_store\views.py:66
+#: .\book_store\views.py:78
 msgid "book was updated successfully"
 msgstr "کتاب با موفقیت به روز شد."
 
@@ -151,23 +147,31 @@ msgstr "کتاب با موفقیت به سبد خرید اضافه شد."
 msgid "book remove from the cart"
 msgstr "کتاب  از سبد خرید حذف شد."
 
+#: .\cart\views.py:56
+msgid "All products successfully removed from your cart."
+msgstr "همه محصولات با موفقیت از سبد خرید شما حذف شدند."
+
+#: .\cart\views.py:59
+msgid "Your cart is already empty"
+msgstr "سبد خرید شما در حال حاضر خالی است."
+
 #: .\orders\models.py:9
 msgid "user"
 msgstr "کاربر"
 
-#: .\orders\models.py:13 .\template\orders\order_create.html:43
+#: .\orders\models.py:13 .\template\orders\order_create.html:44
 msgid "name"
 msgstr "نام"
 
-#: .\orders\models.py:14 .\template\orders\order_create.html:49
+#: .\orders\models.py:14 .\template\orders\order_create.html:52
 msgid "family"
 msgstr "نام خانوادگی"
 
-#: .\orders\models.py:15 .\template\orders\order_create.html:64
+#: .\orders\models.py:15 .\template\orders\order_create.html:71
 msgid "phone number"
 msgstr "شماره تماس"
 
-#: .\orders\models.py:16 .\template\orders\order_create.html:57
+#: .\orders\models.py:16 .\template\orders\order_create.html:62
 msgid "address"
 msgstr "آدرس"
 
@@ -191,8 +195,17 @@ msgstr "تعداد کتاب"
 msgid "book price"
 msgstr "قیمت کتاب"
 
+#: .\orders\views.py:20
+msgid "you can not proceed to checkout page, Because your cart is empty  "
+msgstr "شما نمی توانید به صفحه پرداخت بروید، زیرا سبد خرید شما خالی است."
+
+#: .\orders\views.py:42
+#| msgid "book was created successfully"
+msgid "Your order has been successfully placed"
+msgstr "سفارش شما با موفقیت ثبت شد."
+
 #: .\template\_base.html:60 .\template\book\book_detail.html:12
-#: .\template\book\book_list.html:6
+#: .\template\book\book_list.html:7
 msgid "book store"
 msgstr "فروشگاه کتاب"
 
@@ -285,11 +298,11 @@ msgstr "نویسنده"
 msgid "Edit"
 msgstr "ویرایش"
 
-#: .\template\book\book_detail.html:63 .\template\book\book_list.html:64
+#: .\template\book\book_detail.html:63 .\template\book\book_list.html:65
 #: .\template\cart\cart_detail.html:65 .\template\cart\cart_detail.html:91
-#: .\template\cart\cart_detail.html:124
-#: .\template\orders\order_create.html:107
-#: .\template\orders\order_create.html:117
+#: .\template\cart\cart_detail.html:133
+#: .\template\orders\order_create.html:118
+#: .\template\orders\order_create.html:128
 msgid "$"
 msgstr "تومان"
 
@@ -341,7 +354,7 @@ msgstr "برای نوشتن نظر خود لطفا"
 msgid "log in"
 msgstr "وارد شوید"
 
-#: .\template\book\book_list.html:72
+#: .\template\book\book_list.html:73
 msgid "add new book"
 msgstr "اضافه کردن کتاب جدید"
 
@@ -357,13 +370,22 @@ msgstr ""
 "سبد خرید خالی است!!  لطفا لیست کتاب ها را نگاه کنید و کتاب مورد علاقه خود را"
 " به سبد خرید اضافه کنید"
 
-#: .\template\cart\cart_detail.html:102
+#: .\template\cart\cart_detail.html:103
 msgid "Go Shopping"
 msgstr "بریم خرید"
 
-#: .\template\cart\cart_detail.html:120 .\template\cart\cart_sidebar.html:37
+#: .\template\cart\cart_detail.html:113
+msgid "Empty cart"
+msgstr "خالی کردن سبد خرید"
+
+#: .\template\cart\cart_detail.html:129 .\template\cart\cart_sidebar.html:37
 msgid "total price"
 msgstr "جمع کل"
+
+#: .\template\cart\cart_detail.html:141 .\template\orders\order_create.html:8
+#: .\template\orders\order_create.html:18
+msgid "checkout"
+msgstr "ثبت سفارش"
 
 #: .\template\cart\cart_sidebar.html:9
 msgid "Shopping Cart"
@@ -373,45 +395,35 @@ msgstr "سبد خرید"
 msgid "view shopping cart"
 msgstr "مشاهده سبد خرید"
 
-#: .\template\orders\order_create.html:8
-msgid "checkout"
-msgstr "ثبت سفارش"
-
 #: .\template\orders\order_create.html:35
 msgid "Order Detail"
 msgstr "جزییات سفارش"
 
-#: .\template\orders\order_create.html:68
+#: .\template\orders\order_create.html:77
 msgid "09121111111"
 msgstr "۰۹۱۲۱۱۱۱۱۱۱"
 
-#: .\template\orders\order_create.html:73
+#: .\template\orders\order_create.html:84
 msgid "Your Note"
 msgstr "یادداشت شما"
 
-#: .\template\orders\order_create.html:76
-msgid "If you have a note, enter it here. Otherwise, leave this field blank"
-msgstr ""
-"اگر یادداشتی دارید در اینجا وارد کنید. در غیر این صورت این مکان را خالی "
-"بگذارید."
-
-#: .\template\orders\order_create.html:81
+#: .\template\orders\order_create.html:93
 msgid "Finish"
 msgstr "پرداخت"
 
-#: .\template\orders\order_create.html:90
+#: .\template\orders\order_create.html:101
 msgid "Your Order"
 msgstr "سفارش شما"
 
-#: .\template\orders\order_create.html:96
+#: .\template\orders\order_create.html:107
 msgid "product"
 msgstr "محصول"
 
-#: .\template\orders\order_create.html:97
+#: .\template\orders\order_create.html:108
 msgid "final price"
 msgstr "قیمت نهایی"
 
-#: .\template\orders\order_create.html:115
+#: .\template\orders\order_create.html:126
 msgid "total"
 msgstr "مجموع"
 
@@ -468,6 +480,11 @@ msgstr "بازنشانی رمز"
 #: .\template\registration\password_reset_form.html:13
 msgid "Send Email"
 msgstr "ارسال ایمیل"
+
+#~ msgid "If you have a note, enter it here. Otherwise, leave this field blank"
+#~ msgstr ""
+#~ "اگر یادداشتی دارید در اینجا وارد کنید. در غیر این صورت این مکان را خالی "
+#~ "بگذارید."
 
 #~ msgid "I do not recommend this book"
 #~ msgstr "من این کتاب را توصیه نمیکنم"

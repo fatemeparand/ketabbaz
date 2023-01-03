@@ -29,9 +29,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mb-md--50">
-                            <div class="row no-gutters">
-                                <div class="col-12">
-                                 {% if cart %}
+                        <div class="row no-gutters">
+                            <div class="col-12">
+                                {% if cart %}
 
                                     <div class="table-content table-responsive">
                                         <table class="table text-center">
@@ -97,17 +97,26 @@
                                         </table>
                                     </div>
 
-                                 {% else %}
-                                     <p>{% trans 'The cart is empty! Please look at the list of books and add your favorite to the shopping cart' %}</p>
-                                     <button type="button" class="btn btn-bg-sand" onclick="window.location.href={% url 'book_store:book_list' %}">{% trans 'Go Shopping' %}</button>
+                                {% else %}
+                                    <p>{% trans 'The cart is empty! Please look at the list of books and add your favorite to the shopping cart' %}</p>
+                                    <button type="button" class="btn btn-bg-sand"
+                                            onclick="window.location.href={% url 'book_store:book_list' %}">{% trans 'Go Shopping' %}</button>
                                 {% endif %}
-                                </div>
                             </div>
-                            <div class="row no-gutters border-top pt--20 mt--20">
-                                <div class="col-sm-6 text-sm-right">
-                                    <button type="submit" class="cart-form__btn">خالی کردن سبد خرید</button>
-                                </div>
+                        </div>
+                        {% if cart|length %}
+                        <div class="row no-gutters border-top pt--20 mt--20">
+                            <div class="col-sm-6 text-sm-right">
+
+                                    <form action="{% url 'cart:cart_clear' %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="cart-form__btn">{% trans 'Empty cart' %}</button>
+
+                                </form>
                             </div>
+                        </div>
+                    {% endif %}
+
 
                     </div>
                     <div class="col-lg-4">
@@ -127,7 +136,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="{% url 'orders:order_create' %}" class="btn btn-fullwidth btn-bg-red btn-color-white btn-hover-2">
+                            <a href="{% url 'orders:order_create' %}"
+                               class="btn btn-fullwidth btn-bg-red btn-color-white btn-hover-2">
                                 {% trans 'checkout' %}
                             </a>
                         </div>
