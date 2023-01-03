@@ -32,7 +32,7 @@ class Book(models.Model):
     status = models.CharField(choices=STATUS_CHOICES, max_length=13, verbose_name=_('status'))
     active = models.BooleanField(default=True, verbose_name=_('active status'))
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE, verbose_name=_('subject'),)
-    image = models.ImageField(upload_to='book_cover/', blank=True,null=True, verbose_name=_('book image'))
+    image = models.ImageField(upload_to='book_cover/', blank=True, verbose_name=_('book image'))
 
     datetime_created = models.DateTimeField(auto_now_add=True, verbose_name=_('time created'))
     datetime_modified = models.DateTimeField(auto_now=True, verbose_name=_('time modified'))

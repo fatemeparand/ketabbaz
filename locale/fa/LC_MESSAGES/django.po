@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-03 16:36+0330\n"
-"PO-Revision-Date: 2023-01-03 16:36+0330\n"
-"Last-Translator:   <admin@gmail.com>\n"
+"POT-Creation-Date: 2023-01-03 21:39+0330\n"
+"PO-Revision-Date: 2023-01-03 21:41+0330\n"
+"Last-Translator: فاطمه پرند <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -131,6 +131,11 @@ msgstr "تاریخ ایجاد"
 msgid "i recommend this book"
 msgstr "من این کتاب را توصیه میکنم"
 
+#: .\book_store\views.py:61
+#| msgid "book was updated successfully"
+msgid "book was created successfully"
+msgstr "کتاب با موفقیت ایجاد شد."
+
 #: .\book_store\views.py:78
 msgid "book was updated successfully"
 msgstr "کتاب با موفقیت به روز شد."
@@ -147,11 +152,11 @@ msgstr "کتاب با موفقیت به سبد خرید اضافه شد."
 msgid "book remove from the cart"
 msgstr "کتاب  از سبد خرید حذف شد."
 
-#: .\cart\views.py:56
+#: .\cart\views.py:57
 msgid "All products successfully removed from your cart."
 msgstr "همه محصولات با موفقیت از سبد خرید شما حذف شدند."
 
-#: .\cart\views.py:59
+#: .\cart\views.py:60
 msgid "Your cart is already empty"
 msgstr "سبد خرید شما در حال حاضر خالی است."
 
@@ -200,7 +205,6 @@ msgid "you can not proceed to checkout page, Because your cart is empty  "
 msgstr "شما نمی توانید به صفحه پرداخت بروید، زیرا سبد خرید شما خالی است."
 
 #: .\orders\views.py:42
-#| msgid "book was created successfully"
 msgid "Your order has been successfully placed"
 msgstr "سفارش شما با موفقیت ثبت شد."
 
@@ -378,22 +382,27 @@ msgstr "بریم خرید"
 msgid "Empty cart"
 msgstr "خالی کردن سبد خرید"
 
-#: .\template\cart\cart_detail.html:129 .\template\cart\cart_sidebar.html:37
+#: .\template\cart\cart_detail.html:129 .\template\cart\cart_sidebar.html:40
 msgid "total price"
 msgstr "جمع کل"
 
-#: .\template\cart\cart_detail.html:141 .\template\orders\order_create.html:8
-#: .\template\orders\order_create.html:18
-msgid "checkout"
-msgstr "ثبت سفارش"
+#: .\template\cart\cart_detail.html:142 .\template\cart\cart_detail.html:147
+#: .\template\cart\cart_sidebar.html:47 .\template\orders\order_create.html:93
+msgid "Finish"
+msgstr "پرداخت"
 
-#: .\template\cart\cart_sidebar.html:9
+#: .\template\cart\cart_sidebar.html:11
 msgid "Shopping Cart"
 msgstr "سبد خرید"
 
-#: .\template\cart\cart_sidebar.html:42
+#: .\template\cart\cart_sidebar.html:45
 msgid "view shopping cart"
 msgstr "مشاهده سبد خرید"
+
+#: .\template\orders\order_create.html:8
+#: .\template\orders\order_create.html:18
+msgid "checkout"
+msgstr "ثبت سفارش"
 
 #: .\template\orders\order_create.html:35
 msgid "Order Detail"
@@ -406,10 +415,6 @@ msgstr "۰۹۱۲۱۱۱۱۱۱۱"
 #: .\template\orders\order_create.html:84
 msgid "Your Note"
 msgstr "یادداشت شما"
-
-#: .\template\orders\order_create.html:93
-msgid "Finish"
-msgstr "پرداخت"
 
 #: .\template\orders\order_create.html:101
 msgid "Your Order"

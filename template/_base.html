@@ -149,6 +149,22 @@
 
     <div class="container mt-4">
         <div class="row">
+        {% if request.resolver_match.url_name == 'cart_detail' or request.resolver_match.url_name == 'order_create' %}
+            <div class="col-12">
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+
+            {% endif %}
+
+                {% block cart %}
+
+                {% endblock %}
+
+            </div>
+        {% else %}
             <div class="col-10">
 
             {% if messages %}
@@ -161,8 +177,8 @@
                 {% block content %}
 
                 {% endblock %}
-
             </div>
+        {% endif %}
         {% if not request.resolver_match.url_name == 'cart_detail' and not request.resolver_match.url_name == 'order_create' %}
             <div class="col-2 ">
 
