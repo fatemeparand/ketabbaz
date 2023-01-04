@@ -35,6 +35,23 @@ class BookDetailView(generic.DetailView):
         return context
 
 
+@login_required()
+def book_create_view(request):
+    if request.method == 'POST':
+        form = BookForm(request.POST, request.FILES)
+        if form.is_valid():
+            new_form = form.save(commit=False)
+            new_form.author = request.user
+            new_form.save()
+            messages.success(request, _('book was created successfully'))
+            return redirect('book_store:book_list')
+    else:
+        form = BookForm()
+
+    context = {'form': form}
+    return render(request, 'book/book_create.html', context)
+
+
 class CommentCreateView(generic.CreateView):
     model = Comment
     form_class = CommentForm
@@ -49,23 +66,6 @@ class CommentCreateView(generic.CreateView):
 
         return super().form_valid(form)
     
-
-@login_required()
-def book_create_view(request):
-    if request.method == 'POST':
-        form = BookForm(request.POST)
-        if form.is_valid():
-            new_form = form.save(commit=False)
-            new_form.author = request.user
-            new_form.save()
-            messages.success(request, _('book was created successfully'))
-            return redirect('book_store:book_list')
-    else:
-        form = BookForm()
-
-    context = {'form': form}
-    return render(request, 'book/book_create.html', context)
-
 
 class BookUpdateView(LoginRequiredMixin, SuccessMessageMixin, UserPassesTestMixin, generic.UpdateView):
     def test_func(self):
