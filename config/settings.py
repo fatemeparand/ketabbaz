@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'jalali_date',
     'ckeditor',
+    'phonenumber_field',
 
     # my apps
     'accounts',
