@@ -65,7 +65,7 @@ class CommentCreateView(generic.CreateView):
         obj.book = book
 
         return super().form_valid(form)
-    
+
 
 class BookUpdateView(LoginRequiredMixin, SuccessMessageMixin, UserPassesTestMixin, generic.UpdateView):
     def test_func(self):
@@ -90,6 +90,19 @@ class BookDeleteView(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView
     template_name = 'book/book_delete.html'
 
 
+# def clean(self):
+#     try:
+#         Book.objects.get(book_name=self.cleaned_data['book_name'],
+#                          book_author=self.cleaned_data['book_author'],
+#                          translator=self.cleaned_data['translator'],
+#                          publisher=self.cleaned_data['publisher'])
+#         # if we get this far, we have an exact match for this form's data
+#         raise forms.ValidationError("Exists already!")
+#     except Book.DoesNotExist:
+#         # because we didn't get a match
+#         raise book_create_view
+#
+#     return self.cleaned_data
 
 # def book_list_view(request):
 #     books = BookBlog.objects.filter(status='pub').order_by('-datetime_modified')
@@ -124,7 +137,6 @@ class BookDeleteView(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView
 #     template_name = 'book/book_create.html'
 
 
-
 # @login_required()
 # def book_update_view(request, pk):
 #     book = get_object_or_404(Book, id=pk)
@@ -146,4 +158,3 @@ class BookDeleteView(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView
 #
 #     context = {'book': book}
 #     return render(request, 'book/book_delete.html', context)
-

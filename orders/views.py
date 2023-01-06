@@ -38,6 +38,7 @@ def order_create_view(request):
 
             request.user.first_name = order_obj.first_name
             request.user.last_name = order_obj.last_name
+            request.user.phone_number = order_obj.phone_number
 
             messages.success(request, _('Your order has been successfully placed'))
             request.user.save()

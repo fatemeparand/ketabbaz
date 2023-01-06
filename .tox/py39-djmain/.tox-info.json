@@ -1,0 +1,6 @@
+{
+  "ToxEnv": {
+    "name": "py39-djmain",
+    "type": "VirtualEnvRunner"
+  }
+}

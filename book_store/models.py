@@ -19,7 +19,7 @@ class Book(models.Model):
         ('not available', _('Not Available')),
     )
 
-    book_name = models.CharField(max_length=100, verbose_name=_('book name'))
+    book_name = models.CharField(max_length=100, unique=True, verbose_name=_('book name'))
     book_author = models.CharField(max_length=100, verbose_name=_('book author'))
     translator = models.CharField(max_length=100, blank=True, null=True, verbose_name=_('translator'))
     publisher = models.CharField(max_length=50, verbose_name=_('publisher'))
@@ -36,6 +36,9 @@ class Book(models.Model):
 
     datetime_created = models.DateTimeField(auto_now_add=True, verbose_name=_('time created'))
     datetime_modified = models.DateTimeField(auto_now=True, verbose_name=_('time modified'))
+
+    # class Meta:
+    #     unique_together = ['book_name', 'book_author', 'translator', 'publisher']
 
     def __str__(self):
         return self.book_name
