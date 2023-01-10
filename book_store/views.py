@@ -45,6 +45,7 @@ def book_create_view(request):
             new_form.save()
             messages.success(request, _('book was created successfully'))
             return redirect('book_store:book_list')
+
     else:
         form = BookForm()
 
@@ -88,7 +89,6 @@ class BookDeleteView(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView
     context_object_name = 'book'
     success_url = reverse_lazy('book_store:book_list')
     template_name = 'book/book_delete.html'
-
 
 # def clean(self):
 #     try:

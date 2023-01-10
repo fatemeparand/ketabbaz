@@ -19,7 +19,7 @@ class Book(models.Model):
         ('not available', _('Not Available')),
     )
 
-    book_name = models.CharField(max_length=100, unique=True, verbose_name=_('book name'))
+    book_name = models.CharField(max_length=100, verbose_name=_('book name'))
     book_author = models.CharField(max_length=100, verbose_name=_('book author'))
     translator = models.CharField(max_length=100, blank=True, null=True, verbose_name=_('translator'))
     publisher = models.CharField(max_length=50, verbose_name=_('publisher'))
