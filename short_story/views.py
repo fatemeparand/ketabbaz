@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def short_story_list_view(request):
+    return render(request, 'short_story/shortstory_list.html')
