@@ -100,35 +100,36 @@
                                 </a>
                             </li>
 
-                                <li class="header-toolbar__item user-info">
-                                 {% if user.is_authenticated %}
-                                <a href="my-account.html" class="header-toolbar__btn">
-                                    <i class="flaticon flaticon-user"></i>
-                                </a>
+                            <li class="header-toolbar__item user-info">
+                                {% if user.is_authenticated %}
+                                    <a href="my-account.html" class="header-toolbar__btn">
+                                        <i class="flaticon flaticon-user"></i>
+                                    </a>
 
-                                <ul class="user-info-menu">
-                                    <li>
-                                        <a class="text-right" href="my-account.html">
-                                            {% trans 'Account' %}, {{ user.username }}
-                                        </a>
+                                    <ul class="user-info-menu">
+                                        <li>
+                                            <a class="text-right" href="my-account.html">
+                                                {% trans 'Account' %}, {{ user.username }}
+                                            </a>
+                                        </li>
+                                        {#                                    <li>#}
+                                        {#                                        <a class="text-right" href="cart.html">سبد خرید</a>#}
+                                        {#                                    </li>#}
+                                        <li>
+                                            <a class="text-right" href="wishlist.html">{% trans 'Favorites' %}</a>
+                                        </li>
+                                        <li>
+                                            <a class="text-right"
+                                               href="{% url 'account_logout' %}">{% trans 'logout' %}</a>
+                                        </li>
+                                    </ul>
                                     </li>
-{#                                    <li>#}
-{#                                        <a class="text-right" href="cart.html">سبد خرید</a>#}
-{#                                    </li>#}
-                                    <li>
-                                        <a class="text-right" href="wishlist.html">{% trans 'Favorites' %}</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-right" href="{% url 'account_logout' %}">{% trans 'logout' %}</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            {% else %}
-                                <p>
-                                    <a href="{% url 'account_signup' %}">{% trans 'signup' %}</a>/
-                                    <a href="{% url 'account_login' %}">{% trans 'login' %}</a>
-                                </p>
-                            {% endif %}
+                                {% else %}
+                                    <p>
+                                        <a href="{% url 'account_signup' %}">{% trans 'signup' %}</a>/
+                                        <a href="{% url 'account_login' %}">{% trans 'login' %}</a>
+                                    </p>
+                                {% endif %}
                             <li class="header-toolbar__item">
                                 <a href="#searchForm" class="header-toolbar__btn toolbar-btn">
                                     <i class="flaticon flaticon-search"></i>
@@ -149,109 +150,145 @@
 
     <div class="container mt-4">
         <div class="row">
-        {% if request.resolver_match.url_name == 'cart_detail' or request.resolver_match.url_name == 'order_create' %}
-            <div class="col-12">
+            {% if request.resolver_match.url_name == 'cart_detail' or request.resolver_match.url_name == 'order_create' %}
+                <div class="col-12">
 
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-                {% endfor %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                        {% endfor %}
 
-            {% endif %}
+                    {% endif %}
 
-                {% block cart %}
+                    {% block cart %}
 
-                {% endblock %}
+                    {% endblock %}
 
-            </div>
-        {% else %}
-            <div class="col-10">
-
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-                {% endfor %}
-
-            {% endif %}
-
-                {% block content %}
-
-                {% endblock %}
-            </div>
-        {% endif %}
-        {% if not request.resolver_match.url_name == 'cart_detail' and not request.resolver_match.url_name == 'order_create' %}
-            <div class="col-2 ">
-
-                <div class="card bg-light">
-                    {# <h5 class="card-header">About</h5>#}
-                    <div class="card-body">
-                        <p>
-                            فیتزجرالد سال ۱۹۳۷ پس از بستن قراردادی با کمپانی رسانه‌ای «ام‌جی‌ام» به لس‌آنجلس مهاجرت
-                            می‌کند. وقتی فیتزجرالد داستان کوتاه «دمای هوا» را در سال ۱۹۳۸ نوشت در مجله «اسکوایر»
-                            فیلم‌نامه و داستان‌کوتاه می‌نوشت و روی رمان تمام‌نشده‌اش به نام «عشق آخرین تایکون» کار
-                            می‌کرد.
-
-                            اسکات فیتزجرالد ۲۱ دسامبر ۱۹۴۰، زمانی که تنها ۴۴ سال سن داشت، درگذشت.
-                            جملاتی از کتاب گتسبی بزرگ
-
-                            یک شب پاییزی -پنج سال پیش- وقتی برگ‌های پاییزی داشتند می‌ریختند، آن‌ها در خیابان قدم می‌زدند
-                            و بعد به جایی رسیدند که هیچ درختی نبود و پیاده‌رو از نور ماه سفید شده بود. آن‌ها، رو در روی
-                            هم ایستادند. شب سردی بود با هیجانی اسرارآمیز که فقط دو بار در سال هنگام تغییر آب و هوا رخ
-                            می‌دهد. نور چراغ خانه‌ها در سکوت به تاریکی بیرون هجوم می‌آورد و در بین ستارگان غوغایی بود.
-                            گتسبی از گوشه‌ی چشم‌اش می‌دید که بلوک‌های دیوار پیاده‌رو مثل نردبان هستند. از آن‌ها بالا رفت
-                            و جایی مخفی را در بالای درخت‌ها دید، اگر تنها بود می‌توانست بالاتر برود و اگر بالا می‌رفت،
-                            می‌توانست بر بام جهان بایستد و طعم شیرین پیروزی را بچشد.
-
-                        </p>
-                    </div>
                 </div>
+            {% else %}
+                <div class="col-10">
+
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                        {% endfor %}
+
+                    {% endif %}
+
+                    {% block content %}
+
+                    {% endblock %}
+                </div>
+            {% endif %}
+            {% if not request.resolver_match.url_name == 'cart_detail' and not request.resolver_match.url_name == 'order_create' %}
+                <div class="col-2 ">
+                <div class="card bg-light">
+
+                    <!--msb: main sidebar-->
+                    <div class="msb" id="msb">
+                        <nav class="navbar navbar-default" role="navigation">
+                            <div class="navbar-header">
+                                <div class="brand-wrapper">
+                                    <!-- Brand -->
+                                    <div class="brand-name-wrapper">
+                                        <a class="navbar-brand" href="#">
+                                            SAITAMA
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Main Menu -->
+                            <div class="side-menu-container">
+                                <ul class="nav navbar-nav">
+
+                                    <li><a href="#"><i class="fa fa-dashboard"></i> کتاب</a></li>
+                                    <li class="active"><a href="#"><i class="fa fa-puzzle-piece"></i> Components</a>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-heart"></i> نویسندگان</a></li>
+
+                                    <!-- Dropdown-->
+                                    <li class="panel panel-default" id="dropdown">
+{#                                        <a data-toggle="collapse" href="#dropdown-lvl1">#}
+{#                                            <i class="fa fa-diamond"></i> Apps#}
+{#                                            <span class="caret"></span>#}
+{#                                        </a>#}
+
+                                                    <!-- Dropdown level 2 -->
+                                                    <li class="panel panel-default" id="dropdown">
+                                                        <a data-toggle="collapse" href="#dropdown-lvl2">
+                                                            <i class="glyphicon glyphicon-off"></i> ناشران<span
+                                                                class="caret"></span>
+                                                        </a>
+                                                        <div id="dropdown-lvl2" class="panel-collapse collapse">
+                                                            <div class="panel-body">
+                                                                <ul class="nav navbar-nav">
+                                                                    <li><a href="#">Link</a></li>
+                                                                    <li><a href="#">Link</a></li>
+                                                                    <li><a href="#">Link</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div><!-- /.navbar-collapse -->
+                        </nav>
+                    </div>
+
+                </div>
+                
+            {% endif %}
 
             </div>
-        {% endif %}
-
         </div>
+
+
+        <!-- Search form Popup Start -->
+        <div class="searchform__popup" id="searchForm">
+            <a href="#" class="btn-close"><i class="flaticon flaticon-cross"></i></a>
+            <div class="searchform__body">
+                <p>در باکس زیر عبارت خود را وارد کنید</p>
+                <form class="searchform">
+                    <input type="text" name="popup-search" id="popup-search" class="searchform__input"
+                           placeholder="جستجو در بین محصولات...">
+                    <button type="submit" class="searchform__submit"><i
+                            class="flaticon flaticon-magnifying-glass-icon"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <!-- Search form Popup End -->
+
+
     </div>
 
 
-    <!-- Search form Popup Start -->
-    <div class="searchform__popup" id="searchForm">
-        <a href="#" class="btn-close"><i class="flaticon flaticon-cross"></i></a>
-        <div class="searchform__body">
-            <p>در باکس زیر عبارت خود را وارد کنید</p>
-            <form class="searchform">
-                <input type="text" name="popup-search" id="popup-search" class="searchform__input"
-                       placeholder="جستجو در بین محصولات...">
-                <button type="submit" class="searchform__submit"><i class="flaticon flaticon-magnifying-glass-icon"></i>
-                </button>
-            </form>
-        </div>
-    </div>
-    <!-- Search form Popup End -->
+    <!-- ************************* JS Files ************************* -->
+
+    <!-- jQuery JS -->
+    <script src="{% static 'js/vendor.js' %}"></script>
+
+    <!-- Main JS -->
+    <script src="{% static 'js/main.js' %}"></script>
 
 
-</div>
+    <!-- Optional JavaScript; choose one of the two! -->
 
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
 
-<!-- ************************* JS Files ************************* -->
-
-<!-- jQuery JS -->
-<script src="{% static 'js/vendor.js' %}"></script>
-
-<!-- Main JS -->
-<script src="{% static 'js/main.js' %}"></script>
-
-
-<!-- Optional JavaScript; choose one of the two! -->
-
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-
-<!-- Option 2: Separate Popper and Bootstrap JS -->
-<!--
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
--->
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
 </body>
 </html>

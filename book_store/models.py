@@ -37,8 +37,8 @@ class Book(models.Model):
     datetime_created = models.DateTimeField(auto_now_add=True, verbose_name=_('time created'))
     datetime_modified = models.DateTimeField(auto_now=True, verbose_name=_('time modified'))
 
-    # class Meta:
-    #     unique_together = ['book_name', 'book_author', 'translator', 'publisher']
+    class Meta:
+        unique_together = ('book_name', 'book_author', 'translator', 'publisher')
 
     def __str__(self):
         return self.book_name

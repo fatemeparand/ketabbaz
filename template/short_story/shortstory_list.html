@@ -1,10 +1,30 @@
 {% extends '_base.html' %}
 {% load i18n %}
+{% load static %}
 
 {% block page_title %}
     KetaBazan/{% trans 'short story' %}
 {% endblock %}
 
 {% block content %}
-<p><b>{% trans 'short story' %}</b></p>
+    <div class="main-content-wrapper container-fluid bg-light">
+
+        <div class="card container d-flex justify-content-center mb-3 " style="max-width: 750px;">
+            <div class="row g-0">
+                <div class="col-md-3">
+                    <img src="{% static 'img/hafez.jpg' %}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h1 class="card-title mb--20"><b>تیتر کتاب</b></h1>
+
+                        <p class="card-text text-justify">This is a wider card with supporting text below as a natural
+                            lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Card with an image on left -->
 {% endblock %}
